@@ -25,6 +25,7 @@ import { Link } from "react-router-dom"; // for routing links if needed
 import About from "./components/about/About";
 import Menu from "./components/menu/Menu";
 import Contact from "./components/contact/Contact";
+import Home from "./components/home/Home";
 
 function App() {
   const iconList = [
@@ -64,86 +65,84 @@ function App() {
 
   return (
     <Fragment>
-      <header className="border border-red-600 ">
-        {/* top */}
-        <div className="bg-darkGray">
-          <div className="container flex justify-between py-2">
-            {/* col-1 */}
-            <div className="flex text-white gap-10">
-              <div className="space-x-2">
-                <LocalPhoneIcon />
-                <span>081281116697</span>
+      <Router>
+        <header>
+          {/* top */}
+          <div className="bg-darkGray">
+            <div className="container flex justify-between py-2">
+              {/* col-1 */}
+              <div className="flex text-white gap-10">
+                <div className="space-x-2">
+                  <LocalPhoneIcon />
+                  <span>081281116697</span>
+                </div>
+                <div className="space-x-2">
+                  <MailIcon />
+                  <span>ponorogo@gmail.com</span>
+                </div>
               </div>
-              <div className="space-x-2">
-                <MailIcon />
-                <span>ponorogo@gmail.com</span>
+              {/* col-2 */}
+              <div>
+                <ul className="flex gap-2">{listItems}</ul>
               </div>
-            </div>
-            {/* col-2 */}
-            <div>
-              <ul className="flex gap-2">{listItems}</ul>
             </div>
           </div>
-        </div>
-        {/* bottom */}
-        <nav className="bg-[#F9F9F7]">
-          <AppBar position="sticky" sx={{ backgroundColor: "#F9F9F7" }}>
-            <Toolbar>
-              <Container
-                maxWidth="lg"
-                sx={{ display: "flex", justifyContent: "space-between" }}
-              >
-                {/* Logo Section */}
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <img
-                    src={logo}
-                    alt="logo"
-                    style={{ height: "40px", marginRight: "10px" }}
-                  />
-                  <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{ fontWeight: "600", fontStyle: "italic" }}
-                  >
-                    Bistro Bliss
-                  </Typography>
-                </Box>
+          {/* bottom */}
+          <nav>
+            <AppBar position="relative" sx={{ backgroundColor: "#F9F9F7" }}>
+              <Toolbar>
+                <Container
+                  disableGutters
+                  maxWidth={"lg"}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {/* Logo Section */}
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      src={logo}
+                      alt="logo"
+                      style={{ height: "60px", marginRight: "10px" }}
+                    />
+                    <Typography
+                      variant="h4"
+                      component="div"
+                      sx={{
+                        fontWeight: "600",
+                        fontStyle: "italic",
+                        fontFamily: "Playfair Display",
+                        color: "black",
+                      }}
+                    >
+                      Bistro Bliss
+                    </Typography>
+                  </Box>
 
-                {/* Menu Items */}
-                <Box sx={{ display: "flex", gap: 3 }}>
-                  {/* <Link   to="/about">
-                    About
-                  </Link>
-                  <Link   to="/menu">
-                    Menu
-                  </Link>
-                  <Link   to="/contact">
-                    Contact
-                  </Link> */}
-                  {/* <Link  to="/about">
-                    About
-                  </Link>
-                  <Link   to="/menu">
-                    Menu
-                  </Link>
-                  <Link   to="/contact">
-                    Contact
-                  </Link> */}
-                </Box>
+                  {/* Menu Items */}
+                  <Box sx={{ display: "flex", gap: 3, color: "black" }}>
+                    <Link  to="/home">Home</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/menu">Menu</Link>
+                    <Link to="/contact">Contact</Link>
+                  </Box>
 
-                {/* Book a Table Button */}
-                <Box>
-                  <Button variant="contained" color="primary">
-                    Book A Table
-                  </Button>
-                </Box>
-              </Container>
-            </Toolbar>
-          </AppBar>
-        </nav>
-      </header>
-      <Router>
+                  {/* Book a Table Button */}
+                  <Box>
+                    <Button variant="contained" color="primary">
+                      Book A Table
+                    </Button>
+                  </Box>
+                </Container>
+              </Toolbar>
+            </AppBar>
+          </nav>
+        </header>
+
         <Routes>
+        <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
