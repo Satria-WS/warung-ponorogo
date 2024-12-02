@@ -20,13 +20,14 @@ import {
   Button,
   Container,
   Box,
+  Link as MUILink,
 } from "@mui/material";
 import { Link } from "react-router-dom"; // for routing links if needed
 import About from "./components/about/About";
 import Menu from "./components/menu/Menu";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
-import { OtherHouses } from "@mui/icons-material";
+import { useState } from "react";
 
 function App() {
   const iconList = [
@@ -53,6 +54,14 @@ function App() {
   ];
 
   const menuList = ["home", "about", "menu", "contact"];
+
+  const [activeLink, setActiveLink] = useState(0); // Track the active link
+
+  const handleClick = (path: any) => {
+
+
+    setActiveLink(path);
+  };
 
   // Specify the type for the accumulator as an array of JSX elements
   const listItems = iconList.reduce<JSX.Element[]>((acc, item, index) => {
@@ -126,21 +135,29 @@ function App() {
                     </Typography>
                   </Box>
 
-                  {/* Menu Items */}
                   <Box sx={{ display: "flex", gap: 3, color: "black" }}>
-                    {menuList.map((item, index) => (
-                      <>
+                    {menuList.map((item, index) => {
+                      const path = `/${item}`;
+                      const isActive = activeLink === index; // Check if the link is active
+
+                      return (
                         <Link
                           key={index}
-                          className="hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold hover:font-bold  px-4 py-2"
-                          to={`/${item}`}
+                          to={path}
+                          onClick={() => handleClick(index)} // Update active link when clicked
+                          className={`hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold px-4 py-2 ${
+                            isActive 
+                              ? "bg-[#DBDFD0] font-bold"
+                              : "bg-transparent"
+                          }`} // Apply active styles conditionally
                         >
                           {`${item
                             .charAt(0)
                             .toLocaleUpperCase()}${item.substring(1)}`}
+                          {/* Capitalize the first letter */}
                         </Link>
-                      </>
-                    ))}
+                      );
+                    })}
                   </Box>
 
                   {/* Book a Table Button */}
@@ -151,7 +168,7 @@ function App() {
                       sx={{
                         backgroundColor: "red",
                         "&:hover": { backgroundColor: "darkred" },
-                        borderRadius:"999px"
+                        borderRadius: "999px",
                       }}
                     >
                       Book A Table
