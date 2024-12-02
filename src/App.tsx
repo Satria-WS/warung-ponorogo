@@ -26,6 +26,7 @@ import About from "./components/about/About";
 import Menu from "./components/menu/Menu";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
+import { OtherHouses } from "@mui/icons-material";
 
 function App() {
   const iconList = [
@@ -51,6 +52,8 @@ function App() {
     },
   ];
 
+  const menuList = ["home", "about", "menu", "contact"];
+
   // Specify the type for the accumulator as an array of JSX elements
   const listItems = iconList.reduce<JSX.Element[]>((acc, item, index) => {
     acc.push(
@@ -66,6 +69,7 @@ function App() {
   return (
     <Fragment>
       <Router>
+        {/* header */}
         <header>
           {/* top */}
           <div className="bg-darkGray">
@@ -98,6 +102,7 @@ function App() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                    padding: "1.2rem",
                   }}
                 >
                   {/* Logo Section */}
@@ -123,15 +128,32 @@ function App() {
 
                   {/* Menu Items */}
                   <Box sx={{ display: "flex", gap: 3, color: "black" }}>
-                    <Link  to="/home">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/menu">Menu</Link>
-                    <Link to="/contact">Contact</Link>
+                    {menuList.map((item, index) => (
+                      <>
+                        <Link
+                          key={index}
+                          className="hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold hover:font-bold  px-4 py-2"
+                          to={`/${item}`}
+                        >
+                          {`${item
+                            .charAt(0)
+                            .toLocaleUpperCase()}${item.substring(1)}`}
+                        </Link>
+                      </>
+                    ))}
                   </Box>
 
                   {/* Book a Table Button */}
                   <Box>
-                    <Button variant="contained" color="primary">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        backgroundColor: "red",
+                        "&:hover": { backgroundColor: "darkred" },
+                        borderRadius:"999px"
+                      }}
+                    >
                       Book A Table
                     </Button>
                   </Box>
@@ -140,9 +162,10 @@ function App() {
             </AppBar>
           </nav>
         </header>
-
+        {/* Router */}
         <Routes>
-        <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
