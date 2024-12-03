@@ -256,9 +256,11 @@ const Home = () => {
         <Box
           sx={{
             height: "600px",
+            padding: "2rem",
+            margin:"5rem 0"
           }}
         >
-          <div className="grid grid-cols-2 bg-[#F9F9F7] h-full py-32 px-28">
+          <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
             {/* col-1 */}
             <div className="relative">
               <img
@@ -288,7 +290,7 @@ const Home = () => {
               </div>
             </div>
             {/* col-2 */}
-            <div className=" space-y-5 p-16">
+            <div className="relative space-y-5 p-16">
               <Typography
                 variant="h3"
                 sx={{
@@ -313,54 +315,64 @@ const Home = () => {
           </div>
         </Box>
         {/* offer event */}
+        <Box>
+          {/* Title */}
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Playfair Display",
+              textAlign: "center",
+              padding:"25px 25px"
+            }}
+          >
+            We provide healthy food for your family
+          </Typography>
+          <Grid2
+            container
+            spacing={2} // Adds spacing between grid items
+            justifyContent="center" // Centers the items horizontally
+            gap={10}
+          >
+            {/* {Array.from(Array(4)).map((_, index) => ( */}
+            {listEvent.map((event, index) => (
+              <Grid2
+                item
+                xs={2} // Full width on mobile
+                sm={6} // 50% width on small screens (tablets)
+                md={3} // 25% width on medium and larger screens (desktops)
+                key={index}
+              >
+                <Card>
+                  <CardMedia
+                    sx={{
+                      width: "400px",
+                      height: "300px",
+                    }}
+                    component="img"
+                    image={event.imageList} // Your image source
+                    alt={event.title}
+                  />
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    {/* Title */}
+                    <Typography variant="h5" component="div">
+                      Catering
+                    </Typography>
 
-        <Grid2
-          container
-          spacing={2} // Adds spacing between grid items
-          justifyContent="center" // Centers the items horizontally
-          sx={{ marginTop: 4 }} // Adds margin at the top of the grid container
-          gap={10}
-        >
-          {/* Loop through the items to display multiple cards */}
-          {/* {Array.from(Array(4)).map((_, index) => ( */}
-          {listIcon.map((icon, index) => (
-            <Grid2
-              item
-              xs={2} // Full width on mobile
-              sm={6} // 50% width on small screens (tablets)
-              md={3} // 25% width on medium and larger screens (desktops)
-              key={index}
-            >
-              <Card>
-                <CardMedia
-                  sx={{
-                    width: "300px",
-                    height: "300px",
-                  }}
-                  component="img"
-                  image={""} // Your image source
-                  alt={""}
-                />
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  {/* Title */}
-                  <Typography variant="h5" component="div">
-                    Catering
-                  </Typography>
-
-                  {/* Description */}
-                  <p></p>
-                </CardContent>
-              </Card>
-            </Grid2>
-          ))}
-        </Grid2>
+                    {/* Description */}
+                    <p></p>
+                  </CardContent>
+                </Card>
+              </Grid2>
+            ))}
+          </Grid2>
+        </Box>
       </Container>
     </>
   );
