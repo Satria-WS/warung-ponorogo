@@ -138,13 +138,13 @@ function App() {
                   <Box sx={{ display: "flex", gap: 3, color: "black" }}>
                     {menuList.map((item, index) => {
                       const path = `/${item}`;
-                      const isActive = activeLink === index; // Check if the link is active
+                      const isActive = activeLink === index; 
 
                       return (
                         <Link
                           key={index}
                           to={path}
-                          onClick={() => handleClick(index)} // Update active link when clicked
+                          onClick={() => handleClick(index)} 
                           className={`hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold px-4 py-2 ${
                             isActive 
                               ? "bg-[#DBDFD0] font-bold"
@@ -154,7 +154,7 @@ function App() {
                           {`${item
                             .charAt(0)
                             .toLocaleUpperCase()}${item.substring(1)}`}
-                          {/* Capitalize the first letter */}
+                        
                         </Link>
                       );
                     })}
