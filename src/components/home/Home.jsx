@@ -11,7 +11,7 @@ import {
   Grid2,
 } from "@mui/material";
 import backgroundImage from "../../assets/home/image-1.png";
-import OurMenu from "./OurMenu";
+import CardMenu from "./CardMenu";
 // icon
 import breakfast from "../../assets/home/ourMenu/breakfast.svg";
 import dishes from "../../assets/home/ourMenu/dishes.svg";
@@ -21,7 +21,7 @@ import desserts from "../../assets/home/ourMenu/desserts.svg";
 const Home = () => {
   return (
     <>
-      <Container disableGutters maxWidth={false}>
+      <Container className="" disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
           sx={{
@@ -94,11 +94,14 @@ const Home = () => {
           </Box>
         </Box>
         {/* Our Menu */}
-        <Box>
+        <Box sx={{
+          padding: "3rem 0"
+        }}>
           <Typography
             variant="h2"
             sx={{
               fontFamily: "Playfair Display",
+              textAlign:"center"
             }}
           >
             Browse Our Menu
@@ -109,15 +112,17 @@ const Home = () => {
             spacing={2} // Adds spacing between grid items
             justifyContent="center" // Centers the items horizontally
             sx={{ marginTop: 4 }} // Adds margin at the top of the grid container
+            gap={10}
           >
             {/* Loop through the items to display multiple cards */}
             {Array.from(Array(4)).map((_, index) => (
               <Grid2
                 item
-                xs={12} // Full width on mobile
+                xs={2} // Full width on mobile
                 sm={6} // 50% width on small screens (tablets)
                 md={3} // 25% width on medium and larger screens (desktops)
                 key={index}
+              
               >
                 <Card
                   sx={{
@@ -128,6 +133,7 @@ const Home = () => {
                     maxWidth: 345,
                     boxShadow: 3,
                     borderRadius: 2,
+                    padding:'1.5rem'
                   }}
                 >
                   {/* Card Media for Image */}
