@@ -1,6 +1,8 @@
 const CardMenu = () => {
   return (
-    <div>OurMenu</div>
-  )
-}
-export default CardMenu
+    <>
+      <div></div>
+    </>
+  );
+};
+export default CardMenu;
