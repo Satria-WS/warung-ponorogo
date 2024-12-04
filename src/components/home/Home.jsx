@@ -484,7 +484,7 @@ const Home = () => {
                   <CardHeader
                     avatar={<Avatar alt="Remy Sharp" src="https://pasa.org/wp-content/uploads/2021/06/Vervet-Monkey-Foundation-credit-Kyle-.jpg" />}
                     title="Monkey"
-                    subheader="September 14, 2016"
+                    subheader="Update place"
                   />
                 </Card>
               </>
