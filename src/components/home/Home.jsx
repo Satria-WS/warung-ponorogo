@@ -448,7 +448,9 @@ const Home = () => {
           </div>
         </Box>
         {/* our customer */}
-        <Box>
+        <Box sx={{
+          padding:"2rem 8rem"
+        }}>
           <Typography
             sx={{
               fontFamily: "Playfair Display",
