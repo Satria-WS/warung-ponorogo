@@ -445,8 +445,11 @@ const Home = () => {
           </div>
         </Box>
         {/* our customer */}
+        <Typography>
+          What Our Customer Say
+        </Typography>
         <Box>
-          
+
         </Box>
       </Container>
     </>
