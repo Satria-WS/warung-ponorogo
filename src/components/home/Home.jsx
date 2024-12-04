@@ -9,6 +9,9 @@ import {
   CardMedia,
   Grid,
   Grid2,
+  CardHeader,
+  Avatar,
+  Divider,
 } from "@mui/material";
 import backgroundImage from "../../assets/home/image-1.png";
 import CardMenu from "./CardMenu";
@@ -387,13 +390,13 @@ const Home = () => {
           sx={{
             display: "flex",
             flexDirection: (theme) => ({
-              xs: "column-reverse",  // On small screens (less than 600px), flexDirection will be column-reverse
-              sm: "row",     // Background color will be red when screen width is 600px or above
+              xs: "column-reverse", // On small screens (less than 600px), flexDirection will be column-reverse
+              sm: "row", // Background color will be red when screen width is 600px or above
             }),
-            // backgroundColor: "#F9F9F7",
+            backgroundColor: "#F9F9F7",
             padding: "1rem",
             margin: "3rem 0",
- 
+
             justifyContent: "center",
             border: "1px solid red ",
           }}
@@ -445,11 +448,43 @@ const Home = () => {
           </div>
         </Box>
         {/* our customer */}
-        <Typography>
-          What Our Customer Say
-        </Typography>
         <Box>
-
+          <Typography
+            sx={{
+              fontFamily: "Playfair Display",
+              textAlign: "center",
+            }}
+            variant="h3"
+            component="h3"
+          >
+            What Our Customer Say
+          </Typography>
+          <div className="grid grid-cols-3">
+            {Array.from(Array(3)).map((_, index) => (
+              <>
+                <Card
+                  sx={{
+                    backgroundColor: "#F9F9F7",
+                  }}
+                >
+                  <CardContent>
+                    <Typography>The best Restaurant</Typography>
+                    <p>
+                      Last night, we dined at place and were simply blown away.
+                      From the moment we stepped in, we were enveloped in an
+                      inviting atmosphere and greeted with warm smiles.
+                    </p>
+                  </CardContent>
+                  <Divider />
+                  <CardHeader
+                    avatar={<Avatar alt="Remy Sharp" src="" />}
+                    title="Shrimp and Chorizo Paella"
+                    subheader="September 14, 2016"
+                  />
+                </Card>
+              </>
+            ))}
+          </div>
         </Box>
       </Container>
     </>
