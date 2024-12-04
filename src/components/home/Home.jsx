@@ -449,7 +449,7 @@ const Home = () => {
         </Box>
         {/* our customer */}
         <Box sx={{
-          padding:"2rem 8rem"
+          padding:"2rem 1rem"
         }}>
           <Typography
             sx={{
@@ -461,17 +461,20 @@ const Home = () => {
           >
             What Our Customer Say
           </Typography>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto">
             {Array.from(Array(3)).map((_, index) => (
               <>
                 <Card
                   sx={{
                     backgroundColor: "#F9F9F7",
+                    maxWidth:"400px"
                   }}
                 >
-                  <CardContent>
+                  <CardContent sx={{
+                    padding:"1rem 2rem"
+                  }}>
                     <Typography>The best Restaurant</Typography>
-                    <p>
+                    <p className="py-4">
                       Last night, we dined at place and were simply blown away.
                       From the moment we stepped in, we were enveloped in an
                       inviting atmosphere and greeted with warm smiles.
