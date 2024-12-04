@@ -382,26 +382,30 @@ const Home = () => {
             ))}
           </Grid2>
         </Box>
-        {/* fast food */}
-        {/* parent */}
+        {/* fast food as parent */}
         <Box
           sx={{
-            backgroundColor: "#F9F9F7",
+            display: "flex",
+            flexDirection: (theme) => ({
+              xs: "column-reverse",  // On small screens (less than 600px), flexDirection will be column-reverse
+              sm: "row",     // Background color will be red when screen width is 600px or above
+            }),
+            // backgroundColor: "#F9F9F7",
             padding: "1rem",
             margin: "3rem 0",
-            display: "flex",
+ 
             justifyContent: "center",
             border: "1px solid red ",
           }}
         >
           {/* coulumn-1 */}
-          <div className="flex p-16 gap-4">
+          <div className="flex max-lg:flex-col p-4 gap-4">
             {/* coulumn-1.1 */}
             <div>
               <img src={image_3} alt="" />
             </div>
             {/* coulumn-1.2 */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 max-sm:max-w-[27rem]">
               <img src={image_4} alt="" />
               <img src={image_5} alt="" />
             </div>
