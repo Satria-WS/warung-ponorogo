@@ -444,6 +444,10 @@ const Home = () => {
             </div>
           </div>
         </Box>
+        {/* our customer */}
+        <Box>
+          
+        </Box>
       </Container>
     </>
   );
