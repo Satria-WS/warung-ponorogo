@@ -17,10 +17,10 @@ import breakfast from "../../assets/home/ourMenu/breakfast.svg";
 import dishes from "../../assets/home/ourMenu/dishes.svg";
 import drink from "../../assets/home/ourMenu/drinks.svg";
 import desserts from "../../assets/home/ourMenu/desserts.svg";
-import { transform } from "typescript";
-import { Translate } from "@mui/icons-material";
+
 // image
 import image_2 from "../../assets/home/image-2.png";
+
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
@@ -30,6 +30,15 @@ import catering from "../../assets/home/event/event-1.png";
 import birthday from "../../assets/home/event/event-2.png";
 import wedding from "../../assets/home/event/event-3.png";
 import event from "../../assets/home/event/event-4.png";
+
+import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
+// image fast food
+import image_3 from "../../assets/home/image-3.png";
+import image_4 from "../../assets/home/image-4.png";
+import image_5 from "../../assets/home/image-5.png";
 
 const Home = () => {
   const listIcon = [
@@ -257,7 +266,7 @@ const Home = () => {
           sx={{
             height: "600px",
             padding: "2rem",
-            margin:"5rem 0"
+            margin: "5rem 0",
           }}
         >
           <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
@@ -322,7 +331,7 @@ const Home = () => {
             sx={{
               fontFamily: "Playfair Display",
               textAlign: "center",
-              padding:"25px 25px"
+              padding: "25px 25px",
             }}
           >
             We provide healthy food for your family
@@ -361,8 +370,8 @@ const Home = () => {
                     }}
                   >
                     {/* Title */}
-                    <Typography variant="h5" component="div">
-                      Catering
+                    <Typography variant="h5" component="h5">
+                      {event.title}
                     </Typography>
 
                     {/* Description */}
@@ -372,6 +381,64 @@ const Home = () => {
               </Grid2>
             ))}
           </Grid2>
+        </Box>
+        {/* fast food */}
+        {/* parent */}
+        <Box
+          sx={{
+            backgroundColor: "#F9F9F7",
+            padding: "1rem",
+            margin: "3rem 0",
+            display: "flex",
+            justifyContent: "center",
+            border: "1px solid red ",
+          }}
+        >
+          {/* coulumn-1 */}
+          <div className="flex p-16 gap-4">
+            {/* coulumn-1.1 */}
+            <div>
+              <img src={image_3} alt="" />
+            </div>
+            {/* coulumn-1.2 */}
+            <div className="flex flex-col gap-4">
+              <img src={image_4} alt="" />
+              <img src={image_5} alt="" />
+            </div>
+          </div>
+          {/* coulumn-2 */}
+          <div className="border border-purple-500 flex items-center">
+            {/* text content */}
+            <div className="max-w-[29rem] p-4 space-y-5">
+              {/* title */}
+              <Typography
+                sx={{
+                  fontFamily: "Playfair Display",
+                }}
+                variant="h3"
+                component="h3"
+              >
+                Fastest Food Delivery in City
+              </Typography>
+
+              <p className="">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab in
+                esse eveniet consectetur quis temporibus dolorum eius iste
+                facere neque?
+              </p>
+              <ul>
+                <li>
+                  <DeliveryDiningIcon /> Delivery within 30 minutes
+                </li>
+                <li>
+                  <MonetizationOnIcon /> Best Offer & Prices
+                </li>
+                <li>
+                  <WhatsAppIcon /> Whatsap Online
+                </li>
+              </ul>
+            </div>
+          </div>
         </Box>
       </Container>
     </>
