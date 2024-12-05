@@ -11,7 +11,8 @@ import github from "./assets/icon/github.svg";
 import instagram from "./assets/icon/instagram.svg";
 import twitter from "./assets/icon/twitter.svg";
 // import logo
-import logo from "./assets/logo/logo-header.svg";
+import logoHeader from "./assets/logo/logo-header.svg";
+import logoFooter from "./assets/logo/logo-footer.svg";
 // import material-Ui
 import {
   AppBar,
@@ -58,8 +59,6 @@ function App() {
   const [activeLink, setActiveLink] = useState(0); // Track the active link
 
   const handleClick = (path: any) => {
-
-
     setActiveLink(path);
   };
 
@@ -117,7 +116,7 @@ function App() {
                   {/* Logo Section */}
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <img
-                      src={logo}
+                      src={logoHeader}
                       alt="logo"
                       style={{ height: "60px", marginRight: "10px" }}
                     />
@@ -138,15 +137,15 @@ function App() {
                   <Box sx={{ display: "flex", gap: 3, color: "black" }}>
                     {menuList.map((item, index) => {
                       const path = `/${item}`;
-                      const isActive = activeLink === index; 
+                      const isActive = activeLink === index;
 
                       return (
                         <Link
                           key={index}
                           to={path}
-                          onClick={() => handleClick(index)} 
+                          onClick={() => handleClick(index)}
                           className={`hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold px-4 py-2 ${
-                            isActive 
+                            isActive
                               ? "bg-[#DBDFD0] font-bold"
                               : "bg-transparent"
                           }`} // Apply active styles conditionally
@@ -154,7 +153,6 @@ function App() {
                           {`${item
                             .charAt(0)
                             .toLocaleUpperCase()}${item.substring(1)}`}
-                        
                         </Link>
                       );
                     })}
@@ -179,6 +177,7 @@ function App() {
             </AppBar>
           </nav>
         </header>
+
         {/* Router */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -188,6 +187,65 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
+      {/* Footer */}
+      <footer>
+        <Box>
+          <div className="grid grid-cols-3 gap-3">
+            {/* col-1 */}
+            <div className="bg-orange-300 space-y-4">
+              <div className="flex gap-3 items-center">
+                <img src={logoFooter} alt="footer logo" />
+                <Typography
+                  variant="h4"
+                  component="div"
+                  sx={{
+                    fontWeight: "600",
+                    fontStyle: "italic",
+                    fontFamily: "Playfair Display",
+                    color: "white",
+                  }}
+                >
+                  Bistro Bliss
+                </Typography>
+              </div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Repudiandae accusantium odio possimus ipsum. Ab, recusandae.
+                Atque ducimus et repellat porro?
+              </p>
+              <ul className="flex gap-2">
+                {iconList.map((item, index) => (
+                  <>
+                    <li className="pointer" key={index}>
+                      <a href={item.link}>
+                        <img className="bg-red-700 rounded-full" src={item.icon} alt={item.altText} />
+                      </a>
+                    </li>
+                  </>
+                ))}
+              </ul>
+              <div>
+              </div>
+            </div>
+            {/* col-2 */}
+            <div className="flex flex-col items-center bg-orange-300 space-y-4">
+              <Typography variant="h6" sx={{color:"white" , fontWeight:"600"}}>Pages</Typography>
+              <ul className="space-y-3">
+                {menuList.map((item, index) => (
+                  <>
+                    <li>{item}</li>
+                  </>
+           ))}
+                </ul>
+            </div>
+            {/* col-3 */}
+            <div className="bg-orange-300">
+            <Typography variant="h6" sx={{color:"white" , fontWeight:"600"}}>Follow Us On Instagram</Typography>
+            </div>
+          </div>
+          
+        </Box>
+      </footer>
     </Fragment>
   );
 }
