@@ -461,19 +461,22 @@ const Home = () => {
           >
             What Our Customer Say
           </Typography>
-          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto">
+          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto py-10">
             {Array.from(Array(3)).map((_, index) => (
               <>
                 <Card
                   sx={{
                     backgroundColor: "#F9F9F7",
-                    maxWidth:"400px"
+                    maxWidth: "400px",
+                 
                   }}
                 >
                   <CardContent sx={{
                     padding:"1rem 2rem"
                   }}>
-                    <Typography>The best Restaurant</Typography>
+                    <Typography sx={{
+                      color:"#AD343E"
+                    }} variant="h4" component="h4">“The best restaurant”</Typography>
                     <p className="py-4">
                       Last night, we dined at place and were simply blown away.
                       From the moment we stepped in, we were enveloped in an
@@ -491,6 +494,7 @@ const Home = () => {
             ))}
           </div>
         </Box>
+        
       </Container>
     </>
   );
