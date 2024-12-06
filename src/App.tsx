@@ -218,32 +218,44 @@ function App() {
                   <>
                     <li className="pointer" key={index}>
                       <a href={item.link}>
-                        <img className="bg-red-700 rounded-full" src={item.icon} alt={item.altText} />
+                        <img
+                          className="bg-red-700 rounded-full"
+                          src={item.icon}
+                          alt={item.altText}
+                        />
                       </a>
                     </li>
                   </>
                 ))}
               </ul>
-              <div>
-              </div>
+              <div></div>
             </div>
             {/* col-2 */}
             <div className="flex flex-col items-center bg-orange-300 space-y-4">
-              <Typography variant="h6" sx={{color:"white" , fontWeight:"600"}}>Pages</Typography>
+              <Typography
+                variant="h6"
+                sx={{ color: "white", fontWeight: "600" }}
+              >
+                Pages
+              </Typography>
               <ul className="space-y-3">
                 {menuList.map((item, index) => (
                   <>
                     <li>{item}</li>
                   </>
-           ))}
-                </ul>
+                ))}
+              </ul>
             </div>
             {/* col-3 */}
             <div className="bg-orange-300">
-            <Typography variant="h6" sx={{color:"white" , fontWeight:"600"}}>Follow Us On Instagram</Typography>
+              <Typography
+                variant="h6"
+                sx={{ color: "white", fontWeight: "600" }}
+              >
+                Follow Us On Instagram
+              </Typography>
             </div>
           </div>
-          
         </Box>
       </footer>
     </Fragment>
