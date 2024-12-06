@@ -22,7 +22,7 @@ import drink from "../../assets/home/ourMenu/drinks.svg";
 import desserts from "../../assets/home/ourMenu/desserts.svg";
 
 // image
-import image_2 from "../../assets/home/image-2.png";
+
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -39,6 +39,8 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 // image fast food
+
+import image_2 from "../../assets/home/image-2.png";
 import image_3 from "../../assets/home/image-3.png";
 import image_4 from "../../assets/home/image-4.png";
 import image_5 from "../../assets/home/image-5.png";
@@ -348,11 +350,10 @@ const Home = () => {
             {/* {Array.from(Array(4)).map((_, index) => ( */}
             {listEvent.map((event, index) => (
               <Grid2
-                item
-                xs={2} // Full width on mobile
-                sm={6} // 50% width on small screens (tablets)
-                md={3} // 25% width on medium and larger screens (desktops)
-                key={index}
+              key={index}
+              xs={12} // Takes full width on mobile (1 column)
+              sm={6} // Takes half width on small screens (2 columns)
+              md={3} // Takes 1/4th width on medium screens and above (4 columns)
               >
                 <Card>
                   <CardMedia
@@ -386,6 +387,7 @@ const Home = () => {
           </Grid2>
         </Box>
         {/* fast food as parent */}
+        
         <Box
           sx={{
             display: "flex",
