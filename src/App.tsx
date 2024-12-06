@@ -22,13 +22,19 @@ import {
   Container,
   Box,
   Link as MUILink,
+  Grid2,
 } from "@mui/material";
+
 import { Link } from "react-router-dom"; // for routing links if needed
 import About from "./components/about/About";
 import Menu from "./components/menu/Menu";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
 import { useState } from "react";
+import image_2 from "./assets/home/image-2.png";
+import image_3 from "./assets/home/image-3.png";
+import image_4 from "./assets/home/image-4.png";
+import image_5 from "./assets/home/image-5.png";
 
 function App() {
   const iconList = [
@@ -51,6 +57,20 @@ function App() {
       icon: twitter,
       link: "#",
       altText: "twitter",
+    },
+  ];
+  const imageFooter = [
+    {
+      src: image_2,
+    },
+    {
+      src: image_3,
+    },
+    {
+      src: image_4,
+    },
+    {
+      src: image_5,
     },
   ];
 
@@ -189,10 +209,11 @@ function App() {
       </Router>
       {/* Footer */}
       <footer>
-        <Box>
-          <div className="grid grid-cols-3 gap-3">
+        <Box sx={{ backgroundColor: "#474747" }}>
+          {/* 5rem 0px 5rem 5rem */}
+          <div className="grid grid-cols-3 gap-3 py-32 pr-0 pl-40 ">
             {/* col-1 */}
-            <div className="bg-orange-300 space-y-4">
+            <div className="space-y-4">
               <div className="flex gap-3 items-center">
                 <img src={logoFooter} alt="footer logo" />
                 <Typography
@@ -208,10 +229,11 @@ function App() {
                   Bistro Bliss
                 </Typography>
               </div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Repudiandae accusantium odio possimus ipsum. Ab, recusandae.
-                Atque ducimus et repellat porro?
+              <p className="py-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequuntur in tempore, eos labore vero ratione esse deserunt
+                nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
+                enim, quos quia?
               </p>
               <ul className="flex gap-2">
                 {iconList.map((item, index) => (
@@ -231,7 +253,7 @@ function App() {
               <div></div>
             </div>
             {/* col-2 */}
-            <div className="flex flex-col items-center bg-orange-300 space-y-4">
+            <div className="flex flex-col items-center  space-y-4">
               <Typography
                 variant="h6"
                 sx={{ color: "white", fontWeight: "600" }}
@@ -247,13 +269,39 @@ function App() {
               </ul>
             </div>
             {/* col-3 */}
-            <div className="bg-orange-300">
+            <div>
               <Typography
+                align="center"
                 variant="h6"
                 sx={{ color: "white", fontWeight: "600" }}
               >
                 Follow Us On Instagram
               </Typography>
+              {/* picture */}
+              <div className="flex items-center justify-center">
+                <Grid2
+                  container
+                  spacing={2}
+                  sx={{ width: 403, height: 355, placeContent: "center" }}
+                >
+                  {imageFooter.map((image, index) => (
+                    <Grid2 size={6} key={index}>
+                      {/* Use size instead of xs */}
+                      <Box
+                        component="img"
+                        src={image.src}
+                        alt="picture"
+                        sx={{
+                          width: 194,
+                          height: 170,
+                          objectFit: "cover",
+                          borderRadius: "20px",
+                        }}
+                      />
+                    </Grid2>
+                  ))}
+                </Grid2>
+              </div>
             </div>
           </div>
         </Box>
