@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   Box,
   Typography,
@@ -20,12 +20,38 @@ import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 
 // image fast food
-
 import image_1 from "../../assets/about/image-1.png";
 import image_2 from "../../assets/about/image-2.png";
 import play from "../../assets/about/play.svg";
+// image icon
+import icon_1 from "../../assets/about/icon-1.svg";
+import icon_2 from "../../assets/about/icon-2.svg";
+import icon_3 from "../../assets/about/icon-3.svg";
 
 const About = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
+  const iconList = [
+    {
+      icon: icon_1,
+      title: "Multi Cuisine",
+      text: "",
+    },
+    {
+      icon: icon_2,
+      title: "Easy To Order",
+      text: "",
+    },
+    {
+      icon: icon_3,
+      title: "Fast Delivery",
+      text: "",
+    },
+  ];
+
   return (
     <>
       <CssBaseline />
@@ -100,26 +126,92 @@ const About = () => {
             fontFamily: "Playfair Display",
             color: "white",
             padding: "18rem 10rem 18rem 10rem",
-            textAlign:"center"
+            textAlign: "center",
           }}
         >
-          {/* svg play button */}
-          <Box>
-            <img src={play} alt="Play Button" />
-          </Box>
+          {/* svg play button playlist */}
+          <Button
+            sx={{
+              cursor: "pointer", // Indicate that it's clickable
+              "&:hover": {
+                opacity: 0.8, // Slightly fade out on hover
+                transform: "scale(1.05)", // Slightly increase the size on hover
+                transition: "transform 0.3s ease, opacity 0.3s ease", // Smooth transition for hover effect
+              },
+              "&:active": {
+                transform: "scale(0.95)", // Slightly shrink the button when clicked
+                transition: "transform 0.1s ease", // Quick transition for click effect
+              },
+              "& img": {
+                width: "100%", // Ensure the image fits within the button
+                height: "auto",
+              },
+            }}
+          >
+            <img className="" src={play} alt="Play Button" />
+          </Button>
           {/* title */}
-          <div>
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Playfair Display",
-                paddingTop: "2rem",
-              }}
-            >
-              Feel the authentic & original taste from us
-            </Typography>
-          </div>
+
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Playfair Display",
+              paddingTop: "2rem",
+            }}
+          >
+            Feel the authentic & original taste from us
+          </Typography>
+          {/* YouTube Video */}
+          {/* {true && (
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0,0,0,0.7)", // Optional overlay
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <iframe
+              width="80%" // You can adjust the width and height based on your preference
+              height="80%"
+              src="https://www.youtube.com/embed/LpRZi_cOSOI?autoplay=1&mute=1" // YouTube Embed URL with autoplay
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="YouTube Video"
+            />
+          </Box>
+        )} */}
         </Box>
+      </Container>
+      <Container maxWidth="xl">
+        <div className="grid grid-cols-3 max-md:grid-cols-1 place-content-center gap-12 py-24">
+          {iconList.map((item, index) => (
+            <>
+              {/* col-1 */}
+              <div key={index} className="flex gap-5">
+                {/* col-1.1 */}
+                <div className="flex-shrink-0">
+                  <img src={item.icon} alt={item.title} />
+                </div>
+                {/* col-1.2 */}
+                <div className="space-y-3">
+                  <div className="font-semibold">{item.title}</div>
+                  <div className="text-darkGray text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Earum tempore optio dolor praesentium obcaecati sunt
+                    perferendis rem ratione quo obcaecati doloremque!
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
       </Container>
     </>
   );
