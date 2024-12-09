@@ -463,7 +463,7 @@ const Home = () => {
           >
             What Our Customer Say
           </Typography>
-          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto py-10">
+          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto py-10 gap-3">
             {Array.from(Array(3)).map((_, index) => (
               <>
                 <Card
