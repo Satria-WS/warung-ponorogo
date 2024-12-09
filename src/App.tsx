@@ -210,8 +210,7 @@ function App() {
       {/* Footer */}
       <footer>
         <Box sx={{ backgroundColor: "#474747" }}>
-          {/* 5rem 0px 5rem 5rem */}
-          <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-3 py-32 max-sm:px-6 max-lg:px-7 px-20  ">
+          <div className="grid grid-cols-3 max-sm:grid-cols-1  gap-3 py-32 max-sm:px-6 max-lg:px-7 px-20  ">
             {/* col-1 */}
             <div className="space-y-4">
               <div className="flex gap-3 items-center">
@@ -253,7 +252,7 @@ function App() {
               <div></div>
             </div>
             {/* col-2 */}
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col max-xl:col-span-2 items-center space-y-4">
               <Typography
                 variant="h6"
                 sx={{ color: "white", fontWeight: "600" }}
@@ -314,7 +313,7 @@ function App() {
               </div>
             </div>
             {/* copyright */}
-            <div className="flex justify-center p-[1em] col-span-3 ">
+            <div className="flex justify-center p-[1em] col-span-3  ">
               <span className="text-white">{`Copyright © ${new Date().getFullYear()} Warung Ponorogo. All Rights Reserved`}</span>
             </div>
           </div>
