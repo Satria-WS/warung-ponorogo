@@ -211,7 +211,7 @@ function App() {
       <footer>
         <Box sx={{ backgroundColor: "#474747" }}>
           {/* 5rem 0px 5rem 5rem */}
-          <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-3 py-32 px-40">
+          <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-3 py-32 max-sm:px-6 max-lg:px-7 px-20  ">
             {/* col-1 */}
             <div className="space-y-4">
               <div className="flex gap-3 items-center">
@@ -263,7 +263,9 @@ function App() {
               <ul className="space-y-3 text-lightOlive">
                 {menuList.map((item, index) => (
                   <>
-                    <li className="hover:text-white duration-300 cursor-pointer">{item}</li>
+                    <li className="hover:text-white duration-300 cursor-pointer">
+                      {item}
+                    </li>
                   </>
                 ))}
               </ul>
@@ -282,31 +284,38 @@ function App() {
                 <Grid2
                   container
                   spacing={2}
-                  sx={{ width: '100%', height: 'auto', placeContent: "center" }}
+                  sx={{ width: "100%", height: "auto", placeContent: "center" }}
                 >
                   {imageFooter.map((image, index) => (
-                    <Grid2 size={{
-                      xs: 12,
-                      md:6
-                    }} key={index}>
+                    <Grid2
+                      size={{
+                        xs: 12,
+                        md: 6,
+                      }}
+                      key={index}
+                    >
                       {/* Use size instead of xs */}
                       <Box
                         component="img"
                         src={image.src}
                         alt="picture"
                         sx={{
-                          width: '100%',
-                          minWidth:150,
+                          width: "100%",
+                          minWidth: 150,
                           height: 170,
-                          objectFit:'cover',
+                          objectFit: "cover",
                           borderRadius: "20px",
-                          flex:"1"
+                          flex: "1",
                         }}
                       />
                     </Grid2>
                   ))}
                 </Grid2>
               </div>
+            </div>
+            {/* copyright */}
+            <div className="flex justify-center p-[1em] col-span-3 ">
+              <span className="text-white">{`Copyright © ${new Date().getFullYear()} Warung Ponorogo. All Rights Reserved`}</span>
             </div>
           </div>
         </Box>
