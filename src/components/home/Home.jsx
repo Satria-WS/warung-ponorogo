@@ -12,6 +12,7 @@ import {
   CardHeader,
   Avatar,
   Divider,
+  CssBaseline,
 } from "@mui/material";
 import backgroundImage from "../../assets/home/image-1.png";
 import CardMenu from "./CardMenu";
@@ -22,7 +23,6 @@ import drink from "../../assets/home/ourMenu/drinks.svg";
 import desserts from "../../assets/home/ourMenu/desserts.svg";
 
 // image
-
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -98,7 +98,8 @@ const Home = () => {
 
   return (
     <>
-      <Container className="" disableGutters maxWidth={false}>
+      <CssBaseline/>
+      <Container disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
           sx={{
@@ -283,7 +284,7 @@ const Home = () => {
                 alt="person"
               />
 
-              <div className=" bg-[#474747] w-[300px] h-[200px] absolute bottom-0 right-0 text-sm text-white p-5 space-y-3 rounded-lg">
+              <div className=" bg-[#474747] w-[300px] h-auto absolute bottom-0 right-0 text-sm text-white p-5 space-y-3 rounded-lg">
                 <Typography
                   sx={{
                     fontWeight: 600,
@@ -350,10 +351,10 @@ const Home = () => {
             {/* {Array.from(Array(4)).map((_, index) => ( */}
             {listEvent.map((event, index) => (
               <Grid2
-              key={index}
-              xs={12} // Takes full width on mobile (1 column)
-              sm={6} // Takes half width on small screens (2 columns)
-              md={3} // Takes 1/4th width on medium screens and above (4 columns)
+                key={index}
+                xs={12} // Takes full width on mobile (1 column)
+                sm={6} // Takes half width on small screens (2 columns)
+                md={3} // Takes 1/4th width on medium screens and above (4 columns)
               >
                 <Card>
                   <CardMedia
@@ -387,7 +388,7 @@ const Home = () => {
           </Grid2>
         </Box>
         {/* fast food as parent */}
-        
+
         <Box
           sx={{
             display: "flex",
@@ -450,9 +451,11 @@ const Home = () => {
           </div>
         </Box>
         {/* our customer */}
-        <Box sx={{
-          padding:"2rem 1rem"
-        }}>
+        <Box
+          sx={{
+            padding: "2rem 1rem",
+          }}
+        >
           <Typography
             sx={{
               fontFamily: "Playfair Display",
@@ -470,15 +473,22 @@ const Home = () => {
                   sx={{
                     backgroundColor: "#F9F9F7",
                     maxWidth: "400px",
-                 
                   }}
                 >
-                  <CardContent sx={{
-                    padding:"1rem 2rem"
-                  }}>
-                    <Typography sx={{
-                      color:"#AD343E"
-                    }} variant="h4" component="h4">“The best restaurant”</Typography>
+                  <CardContent
+                    sx={{
+                      padding: "1rem 2rem",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "#AD343E",
+                      }}
+                      variant="h4"
+                      component="h4"
+                    >
+                      “The best restaurant”
+                    </Typography>
                     <p className="py-4">
                       Last night, we dined at place and were simply blown away.
                       From the moment we stepped in, we were enveloped in an
@@ -487,7 +497,12 @@ const Home = () => {
                   </CardContent>
                   <Divider />
                   <CardHeader
-                    avatar={<Avatar alt="Remy Sharp" src="https://pasa.org/wp-content/uploads/2021/06/Vervet-Monkey-Foundation-credit-Kyle-.jpg" />}
+                    avatar={
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="https://pasa.org/wp-content/uploads/2021/06/Vervet-Monkey-Foundation-credit-Kyle-.jpg"
+                      />
+                    }
                     title="Monkey"
                     subheader="Update place"
                   />
@@ -496,7 +511,6 @@ const Home = () => {
             ))}
           </div>
         </Box>
-        
       </Container>
     </>
   );
