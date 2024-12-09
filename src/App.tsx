@@ -211,7 +211,7 @@ function App() {
       <footer>
         <Box sx={{ backgroundColor: "#474747" }}>
           {/* 5rem 0px 5rem 5rem */}
-          <div className="grid grid-cols-3 gap-3 py-32 pr-0 pl-40 ">
+          <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-3 py-32 px-40">
             {/* col-1 */}
             <div className="space-y-4">
               <div className="flex gap-3 items-center">
@@ -229,13 +229,13 @@ function App() {
                   Bistro Bliss
                 </Typography>
               </div>
-              <p className="py-5">
+              <p className="py-5 text-lightOlive">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequuntur in tempore, eos labore vero ratione esse deserunt
                 nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
                 enim, quos quia?
               </p>
-              <ul className="flex gap-2">
+              <ul className="flex gap-4">
                 {iconList.map((item, index) => (
                   <>
                     <li className="pointer" key={index}>
@@ -253,23 +253,23 @@ function App() {
               <div></div>
             </div>
             {/* col-2 */}
-            <div className="flex flex-col items-center  space-y-4">
+            <div className="flex flex-col items-center space-y-4">
               <Typography
                 variant="h6"
                 sx={{ color: "white", fontWeight: "600" }}
               >
                 Pages
               </Typography>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-lightOlive">
                 {menuList.map((item, index) => (
                   <>
-                    <li>{item}</li>
+                    <li className="hover:text-white duration-300 cursor-pointer">{item}</li>
                   </>
                 ))}
               </ul>
             </div>
             {/* col-3 */}
-            <div>
+            <div className=" max-xl:col-span-3">
               <Typography
                 align="center"
                 variant="h6"
@@ -278,24 +278,29 @@ function App() {
                 Follow Us On Instagram
               </Typography>
               {/* picture */}
-              <div className="flex items-center justify-center">
+              <div className="py-3">
                 <Grid2
                   container
                   spacing={2}
-                  sx={{ width: 403, height: 355, placeContent: "center" }}
+                  sx={{ width: '100%', height: 'auto', placeContent: "center" }}
                 >
                   {imageFooter.map((image, index) => (
-                    <Grid2 size={6} key={index}>
+                    <Grid2 size={{
+                      xs: 12,
+                      md:6
+                    }} key={index}>
                       {/* Use size instead of xs */}
                       <Box
                         component="img"
                         src={image.src}
                         alt="picture"
                         sx={{
-                          width: 194,
+                          width: '100%',
+                          minWidth:150,
                           height: 170,
-                          objectFit: "cover",
+                          objectFit:'cover',
                           borderRadius: "20px",
+                          flex:"1"
                         }}
                       />
                     </Grid2>
