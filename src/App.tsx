@@ -21,7 +21,6 @@ import {
   Button,
   Container,
   Box,
-  Link as MUILink,
   Grid2,
 } from "@mui/material";
 
@@ -206,119 +205,130 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Router>
-      {/* Footer */}
-      <footer>
-        <Box sx={{ backgroundColor: "#474747" }}>
-          <div className="grid grid-cols-3 max-sm:grid-cols-1  gap-3 py-32 max-sm:px-6 max-lg:px-7 px-20  ">
-            {/* col-1 */}
-            <div className="space-y-4">
-              <div className="flex gap-3 items-center">
-                <img src={logoFooter} alt="footer logo" />
-                <Typography
-                  variant="h4"
-                  component="div"
-                  sx={{
-                    fontWeight: "600",
-                    fontStyle: "italic",
-                    fontFamily: "Playfair Display",
-                    color: "white",
-                  }}
-                >
-                  Bistro Bliss
-                </Typography>
-              </div>
-              <p className="py-5 text-lightOlive">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur in tempore, eos labore vero ratione esse deserunt
-                nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
-                enim, quos quia?
-              </p>
-              <ul className="flex gap-4">
-                {iconList.map((item, index) => (
-                  <>
-                    <li className="pointer" key={index}>
-                      <a href={item.link}>
-                        <img
-                          className="bg-red-700 rounded-full"
-                          src={item.icon}
-                          alt={item.altText}
-                        />
-                      </a>
-                    </li>
-                  </>
-                ))}
-              </ul>
-              <div></div>
-            </div>
-            {/* col-2 */}
-            <div className="flex flex-col max-xl:col-span-2 items-center space-y-4">
-              <Typography
-                variant="h6"
-                sx={{ color: "white", fontWeight: "600" }}
-              >
-                Pages
-              </Typography>
-              <ul className="space-y-3 text-lightOlive">
-                {menuList.map((item, index) => (
-                  <>
-                    <li className="hover:text-white duration-300 cursor-pointer">
-                      {item}
-                    </li>
-                  </>
-                ))}
-              </ul>
-            </div>
-            {/* col-3 */}
-            <div className=" max-xl:col-span-3">
-              <Typography
-                align="center"
-                variant="h6"
-                sx={{ color: "white", fontWeight: "600" }}
-              >
-                Follow Us On Instagram
-              </Typography>
-              {/* picture */}
-              <div className="py-3">
-                <Grid2
-                  container
-                  spacing={2}
-                  sx={{ width: "100%", height: "auto", placeContent: "center" }}
-                >
-                  {imageFooter.map((image, index) => (
-                    <Grid2
-                      size={{
-                        xs: 12,
-                        md: 6,
-                      }}
-                      key={index}
-                    >
-                      {/* Use size instead of xs */}
-                      <Box
-                        component="img"
-                        src={image.src}
-                        alt="picture"
-                        sx={{
-                          width: "100%",
-                          minWidth: 150,
-                          height: 170,
-                          objectFit: "cover",
-                          borderRadius: "20px",
-                          flex: "1",
-                        }}
-                      />
-                    </Grid2>
+
+        {/* Footer */}
+        <footer>
+          <Box sx={{ backgroundColor: "#474747" }}>
+            <div className="grid grid-cols-3 max-sm:grid-cols-1  gap-3 py-32 max-sm:px-6 max-lg:px-7 px-20  ">
+              {/* col-1 */}
+              <div className="space-y-4">
+                <div className="flex gap-3 items-center">
+                  <img src={logoFooter} alt="footer logo" />
+                  <Typography
+                    variant="h4"
+                    component="div"
+                    sx={{
+                      fontWeight: "600",
+                      fontStyle: "italic",
+                      fontFamily: "Playfair Display",
+                      color: "white",
+                    }}
+                  >
+                    Bistro Bliss
+                  </Typography>
+                </div>
+                <p className="py-5 text-lightOlive">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consequuntur in tempore, eos labore vero ratione esse deserunt
+                  nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
+                  enim, quos quia?
+                </p>
+                <ul className="flex gap-4">
+                  {iconList.map((item, index) => (
+                    <>
+                      <li className="pointer" key={index}>
+                        <a href={item.link}>
+                          <img
+                            className="bg-red-700 rounded-full"
+                            src={item.icon}
+                            alt={item.altText}
+                          />
+                        </a>
+                      </li>
+                    </>
                   ))}
-                </Grid2>
+                </ul>
+                <div></div>
+              </div>
+              {/* col-2 */}
+              <div className="flex flex-col max-xl:col-span-2 items-center space-y-4">
+                <Typography
+                  variant="h6"
+                  sx={{ color: "white", fontWeight: "600" }}
+                >
+                  Pages
+                </Typography>
+                <ul className="space-y-3 text-lightOlive">
+                  {menuList.map((item, index) => (
+                    <>
+                
+                      <Link
+                        className="hover:text-white duration-300 cursor-pointer block"
+                        to={`/${item}`}
+                      >
+                        {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
+                          1
+                        )}`}
+                      </Link>
+                    </>
+                  ))}
+                </ul>
+              </div>
+              {/* col-3 */}
+              <div className=" max-xl:col-span-3">
+                <Typography
+                  align="center"
+                  variant="h6"
+                  sx={{ color: "white", fontWeight: "600" }}
+                >
+                  Follow Us On Instagram
+                </Typography>
+                {/* picture */}
+                <div className="py-3">
+                  <Grid2
+                    container
+                    spacing={2}
+                    sx={{
+                      width: "100%",
+                      height: "auto",
+                      placeContent: "center",
+                    }}
+                  >
+                    {imageFooter.map((image, index) => (
+                      <Grid2
+                        size={{
+                          xs: 12,
+                          md: 6,
+                        }}
+                        key={index}
+                      >
+                        {/* Use size instead of xs */}
+                        <Box
+                          component="img"
+                          src={image.src}
+                          alt="picture"
+                          sx={{
+                            width: "100%",
+                            minWidth: 150,
+                            height: 170,
+                            objectFit: "cover",
+                            borderRadius: "20px",
+                            flex: "1",
+                          }}
+                        />
+                      </Grid2>
+                    ))}
+                  </Grid2>
+                </div>
+              </div>
+              {/* copyright */}
+              <div className="flex justify-center p-[1em] col-span-3  ">
+                <span className="text-white">{`Copyright © ${new Date().getFullYear()} Warung Ponorogo. All Rights Reserved`}</span>
               </div>
             </div>
-            {/* copyright */}
-            <div className="flex justify-center p-[1em] col-span-3  ">
-              <span className="text-white">{`Copyright © ${new Date().getFullYear()} Warung Ponorogo. All Rights Reserved`}</span>
-            </div>
-          </div>
-        </Box>
-      </footer>
+          </Box>
+        </footer>
+      </Router>
     </Fragment>
   );
 }
