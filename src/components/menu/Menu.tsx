@@ -39,7 +39,7 @@ const Menu = () => {
     setValue(newValue);
   };
 
-  const filteredMenu = (type:string) => {
+  const filteredMenu = (type: string) => {
     if (type === "All") {
       return menuList; // Return all items if "All" is selected
     }
@@ -109,7 +109,7 @@ const Menu = () => {
       <CssBaseline />
       {/* title */}
       <Container maxWidth="xl">
-        <Box>
+        <Box sx={{ padding: "3rem" }}>
           <Typography
             variant="h2"
             sx={{
@@ -119,10 +119,9 @@ const Menu = () => {
           >
             Our Menu
           </Typography>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In illum
-            soluta deserunt aut pariatur ipsa tempora suscipit sed qui
-            voluptate.
+          <p className="text-center py-3 max-w-[500px] mx-auto">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
+            dolorem iure numquam similique nisi eius nostrum qui, ex animi?
           </p>
         </Box>
       </Container>
@@ -192,7 +191,17 @@ const Menu = () => {
               sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+                placeContent:"center",
                 p: 3,
+                "@media(max-width:1268px)": {
+                  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                },
+                "@media(max-width:1024px)": {
+                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                },
+                "@media(max-width:640px)": {
+                  gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
+                },
               }}
             >
               {filteredMenu(
@@ -208,24 +217,50 @@ const Menu = () => {
               ).map((item, index) => (
                 <>
                   <TabPanel
-                    sx={{
-                      border: "1px solid red",
-                    }}
+                    sx={
+                      {
+                        display: "flex",
+                        justifyContent:"center"
+                      }
+                    }
                     key={index}
                     value={value}
                   >
-                    <Card sx={{ maxWidth: "18rem" }}>
+                    <Card
+                      sx={{
+                        maxWidth: "18rem",
+                        transition: "transform 0.3s ease",
+                        "&:hover": {
+                          transform: "translate(0,-10px)",
+                        },
+                      }}
+                    >
                       <CardMedia
                         component="img"
                         height="140"
                         image={item.image}
-                        alt="Fried Eggs"
+                        alt={item.name}
                       />
-                      <CardContent>
-                        <Typography variant="h6" component="div">
+                      <CardContent className="text-center space-y-2">
+                        <Typography
+                          sx={{
+                            color: "#AD343E",
+                            fontWeight: 700,
+                          }}
+                          variant="h6"
+                          component="div"
+                        >
                           {item.price}
                         </Typography>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography
+                          sx={{
+                            fontFamily: "DM Sans",
+                            fontWeight: 700,
+                          }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
                           {item.name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
