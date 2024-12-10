@@ -22,11 +22,16 @@ import PlaceIcon from "@mui/icons-material/Place";
 // image fast food
 import image_1 from "../../assets/about/image-1.png";
 import image_2 from "../../assets/about/image-2.png";
+import image_3 from "../../assets/about/image-3.png";
+
 import play from "../../assets/about/play.svg";
 // image icon
 import icon_1 from "../../assets/about/icon-1.svg";
 import icon_2 from "../../assets/about/icon-2.svg";
 import icon_3 from "../../assets/about/icon-3.svg";
+
+// countUp animation
+import CountUp from "react-countup";
 
 const About = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -52,11 +57,30 @@ const About = () => {
     },
   ];
 
+  const informationList = [
+    {
+      number: "3",
+      text: "Lokasi",
+    },
+    {
+      number: "2021",
+      text: "Awal Berdiri",
+    },
+    {
+      number: "20",
+      text: "Staff Members",
+    },
+    {
+      number: "79",
+      text: "Kepuasan Customer",
+    },
+  ];
+
   return (
     <>
       <CssBaseline />
       <Container maxWidth="xl">
-        <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] py-20 h-full ">
           {/* col-1 */}
           <div className="relative">
             <img
@@ -211,6 +235,61 @@ const About = () => {
               </div>
             </>
           ))}
+        </div>
+      </Container>
+      <Container maxWidth="lg">
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
+          {/* col-1 */}
+          <div className="relative flex flex-col items-center justify-center order-2 max-lg:pb-5">
+            <img
+              className=" border border-black object-cover w-full h-[36rem] rounded-lg "
+              src={image_3}
+              alt="person"
+            />
+          </div>
+          {/* col-2 */}
+          <div className="relative space-y-5 p-16  order-1">
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Playfair Display",
+              }}
+            >
+              A little information for our valuable guest
+            </Typography>
+            <p className="text-[#2C2F24] font-semibold">
+              Our story began with a vision to create a unique dining experience
+              that merges fine dining, exceptional service, and a vibrant
+              ambiance. Rooted in city's rich culinary culture, we aim to honor
+              our local roots while infusing a global palate.
+            </p>
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-3 ">
+              {informationList.map((item, index) => (
+                <>
+                  <div
+                    key={index}
+                    className="flex flex-col items-center bg-white rounded-3xl space-y-2 py-8 max-sm:flex-shrink-0 "
+                  >
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontFamily: "Playfair Display",
+                      }}
+                    >
+                      {/* {item.number} */}
+                      <CountUp
+                        start={0}
+                        end={`${item.number}`}
+                        duration={2.75}
+                      />
+                      {item.number === '79' ? ' %' : null}
+                    </Typography>
+                    <span className="text-xs font-semibold">{item.text}</span>
+                  </div>
+                </>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </>
