@@ -261,7 +261,6 @@ function App() {
                 <ul className="space-y-3 text-lightOlive">
                   {menuList.map((item, index) => (
                     <>
-                
                       <Link
                         className="hover:text-white duration-300 cursor-pointer block"
                         to={`/${item}`}
@@ -322,7 +321,7 @@ function App() {
                 </div>
               </div>
               {/* copyright */}
-              <div className="flex justify-center p-[1em] col-span-3  ">
+              <div className="flex justify-center my-32 col-span-3  ">
                 <span className="text-white">{`Copyright © ${new Date().getFullYear()} Warung Ponorogo. All Rights Reserved`}</span>
               </div>
             </div>
