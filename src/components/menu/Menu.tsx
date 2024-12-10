@@ -58,18 +58,26 @@ const Menu = () => {
                 alignItems: "center",
                 borderBottom: 1,
                 borderColor: "divider",
+                padding:"1rem 0 1rem 0"
               }}
             >
               <TabList onChange={handleChange}>
                 {["All", "Breakfast", "Main Dishes", "Drinks", "Desserts"].map(
-                  (item, index) => (
-                    <>
+                  (item, index) => (            
                       <Tab
-                        sx={{  }}
+                      sx={{
+                        fontFamily: "DM Sans",
+                        color:"#2C2F24",
+                        marginRight: "10px",
+                        fontWeight:700,
+                        borderRadius: 50,
+                        border: "1px solid #DBDFD0",
+                        textTransform:"none"
+                        }}
+                        key={index}
                         label={item}
                         value={`${index + 1}`}
-                      />
-                    </>
+                      />            
                   )
                 )}
               </TabList>
