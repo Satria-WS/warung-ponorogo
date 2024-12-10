@@ -352,15 +352,22 @@ const Home = () => {
             {listEvent.map((event, index) => (
               <Grid2
                 key={index}
-                xs={12} // Takes full width on mobile (1 column)
-                sm={6} // Takes half width on small screens (2 columns)
-                md={3} // Takes 1/4th width on medium screens and above (4 columns)
+                size={{
+                  xs: 12,
+                  sm: 6,
+                  md: 4,
+                  lg:2
+                }}
               >
-                <Card>
+                <Card >
                   <CardMedia
                     sx={{
-                      width: "400px",
+                      width: "100%",
                       height: "300px",
+                      minHeight:"290px",
+                      objectFit: "contain",
+                      // padding: "1rem",
+                      
                     }}
                     component="img"
                     image={event.imageList} // Your image source
