@@ -3,7 +3,9 @@
 
 /* Target the label color !important */
 .MuiInputLabel-root {
-  color: purple ; /* Change to desired label color */
+  font-family: "DM Sans" !important;
+  font-weight: 700 !important;
+  color: #2C2F24 !important;
 }
 
 /* Target the text color inside the input field !important */
@@ -13,7 +15,7 @@
 
 /* Target the border color */
 .MuiOutlinedInput-root fieldset {
-  border-color: blue; /* Change to desired border color */
+  border: 1px solid #DBDFD0;
 }
 
 /* Change border color when input is hovered !important */
@@ -23,7 +25,7 @@
 
 /* Change border color when input is focused */
 .MuiOutlinedInput-root.Mui-focused fieldset {
-  border-color: red; /* Change to color when focused */
+  border-color:  #3498db; /* Change to color when focused */
 }
 
 
