@@ -1,0 +1,49 @@
+.MuiTextField-root {
+}
+
+/* Target the label color !important */
+.MuiInputLabel-root {
+  color: purple ; /* Change to desired label color */
+}
+
+/* Target the text color inside the input field !important */
+.MuiOutlinedInput-input {
+  color: orange ; /* Change to desired text color */
+}
+
+/* Target the border color */
+.MuiOutlinedInput-root fieldset {
+  border-color: blue; /* Change to desired border color */
+}
+
+/* Change border color when input is hovered !important */
+.MuiOutlinedInput-root:hover fieldset {
+  border-color: green; /* Change to color when hovered */
+}
+
+/* Change border color when input is focused */
+.MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: red; /* Change to color when focused */
+}
+
+
+/* sx={{
+             '& .MuiInputLabel-root': {
+                  color: 'purple',  // Label color
+              },
+             '& .MuiOutlinedInput-input': {
+               color: 'orange',  // Change to your desired text color
+              },
+            
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                  borderColor: 'blue', // Change to desired border color
+             },
+             '&:hover fieldset': {
+              borderColor: 'green', // Change to color when hovered
+             },
+            '&.Mui-focused fieldset': {
+               borderColor: 'red', // Change to color when focused
+               },
+             },
+}} */
