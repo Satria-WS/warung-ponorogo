@@ -1,12 +1,11 @@
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
-
 import "./contact.css";
-import { useRef, useState } from "react";
+import { useRef, useState,FormEvent  } from "react";
 // import email
 import emailjs from "@emailjs/browser";
 
-const Contact:() => JSX.Element | null = () => {
-  const form: any = useRef<HTMLFormElement>();
+const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
   const [status, setStatus] = useState<string | null>(null);
 
   if (!form.current) {
@@ -14,8 +13,8 @@ const Contact:() => JSX.Element | null = () => {
     return;
   }
 
-  const sendEmail = (e: any) => {
-    // e.preventDefault();
+  const sendEmail = (e: FormEvent) => {
+     e.preventDefault();
 
     emailjs.sendForm(
       "service_o8aw3wd", // Your EmailJS Service ID
