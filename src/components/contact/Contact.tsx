@@ -8,13 +8,15 @@ const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
   const [status, setStatus] = useState<string | null>(null);
 
-  if (!form.current) {
-    setStatus("Form reference is missing");
-    return;
-  }
+
 
   const sendEmail = (e: FormEvent) => {
-     e.preventDefault();
+    e.preventDefault();
+    
+    if (!form.current) {
+      setStatus("Form reference is missing");
+      return;
+    }
 
     emailjs.sendForm(
       "service_o8aw3wd", // Your EmailJS Service ID
