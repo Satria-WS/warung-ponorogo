@@ -13,6 +13,9 @@ import twitter from "./assets/icon/twitter.svg";
 // import logo
 import logoHeader from "./assets/logo/logo-header.svg";
 import logoFooter from "./assets/logo/logo-footer.svg";
+
+import logoPonorogo from "./assets/logo/rms.png";
+
 // import material-Ui
 import {
   AppBar,
@@ -134,11 +137,11 @@ function App() {
                   }}
                 >
                   {/* Logo Section */}
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ display: "flex", alignItems: "center"  }}>
                     <img
-                      src={logoHeader}
+                      src={logoPonorogo}
                       alt="logo"
-                      style={{ height: "60px", marginRight: "10px" }}
+                      style={{ height: "100px", marginRight: "10px" }}
                     />
                     <Typography
                       variant="h4"
@@ -146,11 +149,13 @@ function App() {
                       sx={{
                         fontWeight: "600",
                         fontStyle: "italic",
-                        fontFamily: "Playfair Display",
-                        color: "black",
+                        fontFamily: "Fugaz One",
+                        color:"black"
+                        // color: "#FC2F00",
+                        
                       }}
                     >
-                      Bistro Bliss
+                      RMS Ponorogo
                     </Typography>
                   </Box>
 
