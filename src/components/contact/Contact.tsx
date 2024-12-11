@@ -1,39 +1,57 @@
 import { Box, Container, Typography, TextField, Button } from "@mui/material";
 import "./contact.css";
-import { useRef, useState,FormEvent  } from "react";
+import { useRef, useState, FormEvent } from "react";
 // import email
 import emailjs from "@emailjs/browser";
+// import logoP from "../../assets/logo/logo-ponorogo.svg";
+// import logo_1 from "../../assets/logo/ponorogo-1.png";
+// import logo_2 from "../../assets/logo/ponorogo-2.png";
+
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
   const [status, setStatus] = useState<string | null>(null);
 
-
-
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!form.current) {
       setStatus("Form reference is missing");
       return;
     }
 
-    emailjs.sendForm(
-      "service_o8aw3wd", // Your EmailJS Service ID
-      "service_o8aw3wd",   // Your EmailJS Template ID
-      form.current, // The reference to the form element
-      "C9K36uwheVoFbeM2A"  // Your EmailJS User ID (this is the public key now)
-    ) 
+    // Accessing form elements by their name attribute
+    const formElements = form.current.elements as HTMLFormControlsCollection;
+    const name = (formElements.namedItem("name") as HTMLInputElement)?.value;
+    const email = (formElements.namedItem("email") as HTMLInputElement)?.value;
+    const subject = (formElements.namedItem("subject") as HTMLInputElement)?.value;
+    const message = (formElements.namedItem("message") as HTMLTextAreaElement)?.value;
+
+    // Validate the form fields
+    if (!name || !email || !subject || !message) {
+      setStatus("All fields are required.");
+      return;
+    }
+
+    // Send email with emailjs
+    emailjs
+      .sendForm(
+        "service_d7g80ti", // Your EmailJS Service ID
+        "template_rmw4f5c", // Your EmailJS Template ID
+        form.current, // The reference to the form element
+        "C9K36uwheVoFbeM2A" // Your EmailJS User ID (this is the public key now)
+      )
       .then(
-      (result) => {
-        console.log("succes", result.text);
-        setStatus("Message sent succesfull");
-      },
-      (error) => {
-        console.log("Failded...", error.text);
-        setStatus("Error sending message. Please try again later.");
-      }
-    );
+        (result) => {
+          console.log("succes", result.text);
+          setStatus("Message sent succesfull");
+          form?.current?.reset(); // clear form input
+        },
+        (error) => {
+          console.log("failed...", error.text);
+          setStatus("Error sending message. Please try again later.");
+        }
+      );
   };
   return (
     <>
@@ -146,19 +164,55 @@ const Contact: React.FC = () => {
         </form>
         {/* logical error if wrong */}
         {status && (
-        <Box
-          sx={{
-            marginTop: '1rem',
-            padding: '0.5rem 1rem',
-            backgroundColor: status.includes('Error') ? '#f44336' : '#4caf50',
-            color: 'white',
-            borderRadius: '4px',
-            textAlign: 'center',
-          }}
-        >
-          {status}
+          <Box
+            sx={{
+              marginLeft: "calc(-50vw + 50%)",
+              width: "100vw",
+              marginTop: "1rem",
+              padding: "0.5rem 1rem",
+              backgroundColor:
+                status.includes("Error") ||
+                status === "All fields are required."
+                  ? "#f44336"
+                  : "#4caf50", // Set red for error or missing fields
+              color: "white",
+              borderRadius: "4px",
+              textAlign: "center",
+            }}
+          >
+            {status}
+          </Box>
+        )}
+        {/* this is map */}
+        <Box sx={{ textAlign: "center", padding: "2rem" }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "Playfair Display",
+              marginBottom: "1.5rem", // Adds space below the title
+            }}
+          >
+            Location
+          </Typography>
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              height: { xs: "300px", sm: "500px" }, // Makes iframe responsive
+              borderRadius: "8px",
+              overflow: "hidden", // Ensures the border radius is applied
+              boxShadow: 2, // Adds a subtle shadow for better appearance
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d700.9025114861278!2d106.77597848830102!3d-6.406482678745308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-6.4065806!2d106.7763737!4m5!1s0x2e69e9ee4b13fa51%3A0xd886d79c40eca645!2sJalan%20Sawangan%20Permai%20RT%2C%20RT.7RT.1%2FRW.9%2C%20Sawangan%20Baru%2C%20Kec.%20Sawangan%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016511!3m2!1d-6.406599!2d106.77631989999999!5e0!3m2!1sid!2sid!4v1733928692807!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              title="Map Location"
+            />
+          </Box>
         </Box>
-      )}
       </Container>
     </>
   );
