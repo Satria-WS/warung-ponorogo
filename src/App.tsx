@@ -27,13 +27,14 @@ import {
 import { Link } from "react-router-dom"; // for routing links if needed
 import About from "./components/about/About";
 import Menu from "./components/menu/Menu";
-import Contact from "./components/contact/Contact";
+
 import Home from "./components/home/Home";
 import { useState } from "react";
 import image_2 from "./assets/home/image-2.png";
 import image_3 from "./assets/home/image-3.png";
 import image_4 from "./assets/home/image-4.png";
 import image_5 from "./assets/home/image-5.png";
+import Contact from "./components/contact/Contact";
 
 function App() {
   const iconList = [
@@ -203,7 +204,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
 
         {/* Footer */}
