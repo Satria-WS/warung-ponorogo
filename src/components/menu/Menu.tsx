@@ -193,7 +193,7 @@ const Menu = () => {
                 gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
                 placeContent:"center",
                 p: 3,
-                "@media(max-width:1268px)": {
+                "@media(max-width:1280px)": {
                   gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                 },
                 "@media(max-width:1024px)": {
