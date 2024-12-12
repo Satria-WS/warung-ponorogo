@@ -19,6 +19,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 
+// import mediasocial
+import goFood from "../../assets/logo/logo-goFood.svg";
+import whatsap from "../../assets/logo/logo-whatsap.svg";
+
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
   const [status, setStatus] = useState<string | null>(null);
@@ -67,13 +71,26 @@ const Contact: React.FC = () => {
       );
   };
 
+  // contact List
   const contactList = [
     {
       icon: PhoneIcon,
-      title: EmailIcon,
-      telp:PlaceIcon
+      title: "Phone",
+      telp: "+6281280807385",
     },
-  ]
+    {
+      icon: EmailIcon,
+      title: "Email",
+      email: "rms.ponorogo21@gmail.com",
+    },
+    {
+      icon: PlaceIcon,
+      title: "Place",
+      address:
+        "Jalan Sawangan Permai RT, RT.7RT.1/RW.9, Sawangan Baru, Kec. Sawangan, Kota Depok, Jawa Barat 16511",
+    },
+  ];
+
   return (
     <>
       <Container maxWidth="xl">
@@ -235,38 +252,74 @@ const Contact: React.FC = () => {
           </Box>
         </Box>
         {/* parent */}
-        <Box>
+        <Box py="2rem">
           {/* child */}
-          <div className="grid grid-cols-3 place-content-center">
+          <div className="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-y-8">
             {/* col1 */}
-            <Box display="flex" alignItems="center">
-              <Icon
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "auto",
-                  height: "auto",
-                  padding: "5px",
-                  bgcolor: "#D91E15",
-                  color: "white",
-                  borderRadius: "10%",
-                }}
-              >
-                <PhoneIcon fontSize="large" />
-              </Icon>
-              <Box ml={2}>
-                <p className="text-lg  text-gray-500 tracking-wider">
-                  Telepon
-                </p>
-                <p className="text-lg font-medium tracking-widest">
-                  +6281280807385
-                </p>
-              </Box>
-            </Box>
+
+            {contactList.map((item, index) => (
+              <>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifySelf="center"
+                  sx={{
+                    "@media(max-width:1280px)": {
+                      // backgroundColor: "red",
+                      justifySelf: "start",
+                    },
+                  }}
+                >
+                  <Icon
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      width: "auto",
+                      height: "auto",
+                      padding: "5px",
+                      bgcolor: "#D91E15",
+                      color: "white",
+                      borderRadius: "10%",
+                    }}
+                  >
+                    <item.icon fontSize="large" />
+                  </Icon>
+                  <Box ml={2}>
+                    <p className="text-lg font-medium tracking-wider text-gray-500">
+                      {item.title}
+                    </p>
+                    {item.telp && (
+                      <p className="text-lg font-medium tracking-widest">
+                        {item.telp}
+                      </p>
+                    )}
+                    {item.email && (
+                      <p className="text-lg font-medium tracking-widest">
+                        {item.email}
+                      </p>
+                    )}
+                    {item.address && (
+                      <p className="text-sm font-medium tracking-widest">
+                        {item.address}
+                      </p>
+                    )}
+                  </Box>
+                </Box>
+              </>
+            ))}
+
             {/* col2 */}
-            <div>col2</div>
+            <div className="border border-cyan-400 px-16 max-xl:col-span-1">
+              <div className="bg-red-600 h-full flex items-center justify-center py-10 shadow-xl rounded-2xl " >
+                <img className="w-[100px]" src={goFood} alt="goFood" />
+              </div>
+            </div>
             {/* col3 */}
-            <div>col3</div>
+            <div className="border border-cyan-400 px-16">
+              <div className="bg-white h-full flex items-center justify-center py-10 shadow-xl rounded-2xl " >
+                <img className="w-[100px]" src={whatsap} alt="goFood" />
+              </div>
+            </div>
           </div>
         </Box>
       </Container>
