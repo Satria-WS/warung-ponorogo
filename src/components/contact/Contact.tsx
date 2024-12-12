@@ -1,4 +1,11 @@
-import { Box, Container, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Icon,
+} from "@mui/material";
 import "./contact.css";
 import { useRef, useState, FormEvent } from "react";
 // import email
@@ -7,6 +14,10 @@ import emailjs from "@emailjs/browser";
 // import logo_1 from "../../assets/logo/ponorogo-1.png";
 // import logo_2 from "../../assets/logo/ponorogo-2.png";
 
+// import material Icons
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import PlaceIcon from "@mui/icons-material/Place";
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
@@ -24,8 +35,10 @@ const Contact: React.FC = () => {
     const formElements = form.current.elements as HTMLFormControlsCollection;
     const name = (formElements.namedItem("name") as HTMLInputElement)?.value;
     const email = (formElements.namedItem("email") as HTMLInputElement)?.value;
-    const subject = (formElements.namedItem("subject") as HTMLInputElement)?.value;
-    const message = (formElements.namedItem("message") as HTMLTextAreaElement)?.value;
+    const subject = (formElements.namedItem("subject") as HTMLInputElement)
+      ?.value;
+    const message = (formElements.namedItem("message") as HTMLTextAreaElement)
+      ?.value;
 
     // Validate the form fields
     if (!name || !email || !subject || !message) {
@@ -53,6 +66,14 @@ const Contact: React.FC = () => {
         }
       );
   };
+
+  const contactList = [
+    {
+      icon: PhoneIcon,
+      title: EmailIcon,
+      telp:PlaceIcon
+    },
+  ]
   return (
     <>
       <Container maxWidth="xl">
@@ -212,6 +233,41 @@ const Contact: React.FC = () => {
               title="Map Location"
             />
           </Box>
+        </Box>
+        {/* parent */}
+        <Box>
+          {/* child */}
+          <div className="grid grid-cols-3 place-content-center">
+            {/* col1 */}
+            <Box display="flex" alignItems="center">
+              <Icon
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "auto",
+                  height: "auto",
+                  padding: "5px",
+                  bgcolor: "#D91E15",
+                  color: "white",
+                  borderRadius: "10%",
+                }}
+              >
+                <PhoneIcon fontSize="large" />
+              </Icon>
+              <Box ml={2}>
+                <p className="text-lg  text-gray-500 tracking-wider">
+                  Telepon
+                </p>
+                <p className="text-lg font-medium tracking-widest">
+                  +6281280807385
+                </p>
+              </Box>
+            </Box>
+            {/* col2 */}
+            <div>col2</div>
+            {/* col3 */}
+            <div>col3</div>
+          </div>
         </Box>
       </Container>
     </>
