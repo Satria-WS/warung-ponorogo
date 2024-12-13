@@ -15,7 +15,7 @@ import logoHeader from "./assets/logo/logo-header.svg";
 import logoFooter from "./assets/logo/logo-footer.svg";
 
 import logoPonorogo from "./assets/logo/rms.png";
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 // import material-Ui
 import {
@@ -26,6 +26,8 @@ import {
   Container,
   Box,
   Grid2,
+  Menu as Menu1,
+  MenuItem,
 } from "@mui/material";
 
 import { Link } from "react-router-dom"; // for routing links if needed
@@ -41,6 +43,19 @@ import image_5 from "./assets/home/image-5.png";
 import Contact from "./components/contact/Contact";
 
 function App() {
+  // State for the menu visibility
+  const [menuAnchorElx, setMenuAnchorElx] = useState(null);
+
+  // Open the menu (set the anchor element)
+  const handleMenuOpen = (event: any) => {
+    setMenuAnchorElx(event.currentTarget);
+  };
+
+  // Close the menu
+  const handleMenuClose = () => {
+    setMenuAnchorElx(null);
+  };
+  console.log('menuAnchorEl?',menuAnchorElx)
   const iconList = [
     {
       icon: fb,
@@ -152,7 +167,6 @@ function App() {
                         fontStyle: "italic",
                         fontFamily: "Fugaz One",
                         color: "black",
-                        // color: "#FC2F00",
                       }}
                     >
                       RMS Ponorogo
@@ -165,14 +179,14 @@ function App() {
                       gap: 3,
                       color: "black",
                       "@media(max-width:1024px)": {
-                        display: "none"
+                        display: "none",
                       },
                     }}
                   >
                     {menuList.map((item, index) => {
                       const path = `/${item}`;
                       const isActive = activeLink === index;
-                    
+
                       return (
                         <Link
                           key={index}
@@ -191,31 +205,61 @@ function App() {
                       );
                     })}
                   </Box>
-                  {/* menu bar */}
-                  <Box sx={{
-                    display:"none",
-                        "@media(max-width:1024px)": {
-                          display: "block"
-                        },
-                  }} >
-                    <MenuOutlinedIcon className="text-red-600" fontSize="large"/>
-                  </Box>
 
-                  {/* Book a Table Button */}
-                  {/* book table */}
-                  {/* <Box>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      sx={{
-                        backgroundColor: "red",
-                        "&:hover": { backgroundColor: "darkred" },
-                        borderRadius: "999px",
-                      }}
+                  {/* Mobile menu icon */}
+                  <Box
+                    sx={{
+                      display: "none",
+                      "@media(max-width:1024px)": {
+                        display: "block",
+                      },
+                    }}
+                  >
+                    <MenuOutlinedIcon
+                      className="text-red-600"
+                      fontSize="large"
+                      onClick={handleMenuOpen} // Open the menu on click
+                    />
+                  </Box>
+          
+                  {/* Pop-up menu (for mobile) */}
+                  <Menu1
+                    anchorEl={menuAnchorElx}
+                    open={Boolean(menuAnchorElx)}
+                    onClose={handleMenuClose} // Close the menu
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                  >
+                    {menuList.map((item, index) => (
+                      <MenuItem
+                        key={index}
+                        onClick={() => {
+                          handleClick(index);
+                          handleMenuClose(); // Close the menu after selecting
+                        }}
+                      >
+                        <Link className="hover:font-semibold duration-300 cursor-pointer"  to={`/${item}`}>
+                        {`${item.charAt(0).toLocaleUpperCase()}${item.substring(1)}`}
+                        </Link>  
+                      
+                      </MenuItem>
+                    ))}
+
+                    {/* <Link
+                      className="hover:text-white duration-300 cursor-pointer block"
+                      to={`/${item}`}
                     >
-                      Book A Table
-                    </Button>
-                  </Box> */}
+                      {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
+                        1
+                      )}`}
+                    </Link> */}
+                  </Menu1>
                 </Container>
               </Toolbar>
             </AppBar>
