@@ -98,7 +98,7 @@ const Home = () => {
 
   return (
     <>
-      <CssBaseline/>
+      <CssBaseline />
       <Container disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
@@ -191,10 +191,9 @@ const Home = () => {
             container
             spacing={2} // Adds spacing between grid items
             sx={{
-              marginTop: 4, 
+              marginTop: 4,
               justifyContent: "center",
-              
-             }} // Adds margin at the top of the grid container
+            }} // Adds margin at the top of the grid container
             gap={10}
           >
             {/* Loop through the items to display multiple cards */}
@@ -207,14 +206,15 @@ const Home = () => {
                 // md={3} // 25% width on medium and larger screens (desktops)
 
                 sx={{
-                  
+                  // Ensure that each item will not shrink
+                  minWidth: "300px", // Set a minimum width for each item to prevent shrinking
                 }}
                 size={{
                   xs: 12,
                   sm: 6,
                   md: 4,
                   lg: 4,
-                   xl:2
+                  xl: 2,
                 }}
                 key={index}
               >
@@ -224,12 +224,12 @@ const Home = () => {
                     flexDirection: "column",
                     alignItems: "center",
                     maxWidth: 345,
-                    margin:" 0 auto",
+                    margin: " 0 auto",
                     boxShadow: 3,
                     borderRadius: 2,
                     padding: "1.5rem",
                     cursor: "pointer",
-                   
+
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translate(0,-10px)",
@@ -237,7 +237,7 @@ const Home = () => {
                   }}
                 >
                   {/* Card Media for Image */}
-                  <CardMedia 
+                  <CardMedia
                     sx={{
                       width: "100px",
                       height: "100px",
@@ -371,18 +371,17 @@ const Home = () => {
                   xs: 12,
                   sm: 6,
                   md: 4,
-                  lg:2
+                  lg: 2,
                 }}
               >
-                <Card >
+                <Card>
                   <CardMedia
                     sx={{
                       width: "100%",
                       height: "300px",
-                      minHeight:"290px",
+                      minHeight: "290px",
                       objectFit: "contain",
                       // padding: "1rem",
-                      
                     }}
                     component="img"
                     image={event.imageList} // Your image source
