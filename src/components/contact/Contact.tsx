@@ -5,6 +5,7 @@ import {
   TextField,
   Button,
   Icon,
+  CssBaseline,
 } from "@mui/material";
 import "./contact.css";
 import { useRef, useState, FormEvent } from "react";
@@ -93,6 +94,7 @@ const Contact: React.FC = () => {
 
   return (
     <>
+      <CssBaseline/>
       <Container maxWidth="xl">
         <Box py="3rem" >
           <Typography
