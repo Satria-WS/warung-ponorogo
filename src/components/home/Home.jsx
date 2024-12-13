@@ -207,7 +207,7 @@ const Home = () => {
                 // md={3} // 25% width on medium and larger screens (desktops)
 
                 sx={{
-                  bgcolor: "red",
+                  
                 }}
                 size={{
                   xs: 12,
