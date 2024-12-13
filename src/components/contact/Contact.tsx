@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <Container maxWidth="xl">
-        <Box>
+        <Box py="3rem" >
           <Typography
             variant="h2"
             sx={{
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
           >
             Contact Us
           </Typography>
-          <p className="max-w-[500px] mx-auto text-center">
+          <p className="max-w-[500px] mx-auto text-center py-5">
             We consider all the drivers of change gives you the components you
             need to change to create a truly happens.
           </p>
@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
           </Box>
         )}
         {/* this is map */}
-        <Box sx={{ textAlign: "center", padding: "2rem" }}>
+        <Box  sx={{ textAlign: "center", padding: "7rem 2rem 4rem 2rem" }}>
           <Typography
             variant="h2"
             sx={{
@@ -307,16 +307,19 @@ const Contact: React.FC = () => {
                 </Box>
               </>
             ))}
-
+    {/* transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "translate(0,-10px)",
+                    }, */}
             {/* col2 */}
-            <div className="border border-cyan-400 px-16 max-xl:col-span-1">
-              <div className="bg-red-600 h-full flex items-center justify-center py-10 shadow-xl rounded-2xl " >
+            <div className="border border-cyan-400 px-16 max-xl:col-span-1 hover:-translate-y-3  duration-300">
+              <div className="bg-red-600 h-full flex items-center justify-center py-10 shadow-xl rounded-2xl ">
                 <img className="w-[100px]" src={goFood} alt="goFood" />
               </div>
             </div>
             {/* col3 */}
-            <div className="border border-cyan-400 px-16">
-              <div className="bg-white h-full flex items-center justify-center py-10 shadow-xl rounded-2xl " >
+            <div className="border border-cyan-400 px-16 hover:-translate-y-3  duration-300">
+              <div className="bg-white h-full flex items-center justify-center py-10 shadow-xl rounded-2xl ">
                 <img className="w-[100px]" src={whatsap} alt="goFood" />
               </div>
             </div>
