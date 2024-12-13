@@ -190,8 +190,11 @@ const Home = () => {
           <Grid2
             container
             spacing={2} // Adds spacing between grid items
-            justifyContent="center" // Centers the items horizontally
-            sx={{ marginTop: 4 }} // Adds margin at the top of the grid container
+            sx={{
+              marginTop: 4, 
+              justifyContent: "center",
+              
+             }} // Adds margin at the top of the grid container
             gap={10}
           >
             {/* Loop through the items to display multiple cards */}
@@ -199,22 +202,36 @@ const Home = () => {
             {listIcon.map((icon, index) => (
               <Grid2
                 item
-                xs={2} // Full width on mobile
-                sm={6} // 50% width on small screens (tablets)
-                md={3} // 25% width on medium and larger screens (desktops)
+                // xs={2} // Full width on mobile
+                // sm={6} // 50% width on small screens (tablets)
+                // md={3} // 25% width on medium and larger screens (desktops)
+
+                sx={{
+                  bgcolor: "red",
+                  flexShrink:0,
+             
+                }}
+                size={{
+                  xs: 12,
+                  sm: 6,
+                  md: 4,
+                  lg: 4,
+                   xl:2
+                }}
                 key={index}
               >
                 <Card
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
                     alignItems: "center",
                     maxWidth: 345,
+                    margin:" 0 auto",
                     boxShadow: 3,
                     borderRadius: 2,
                     padding: "1.5rem",
                     cursor: "pointer",
+                   
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translate(0,-10px)",
@@ -222,7 +239,7 @@ const Home = () => {
                   }}
                 >
                   {/* Card Media for Image */}
-                  <CardMedia
+                  <CardMedia 
                     sx={{
                       width: "100px",
                       height: "100px",
