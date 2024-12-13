@@ -15,6 +15,7 @@ import logoHeader from "./assets/logo/logo-header.svg";
 import logoFooter from "./assets/logo/logo-footer.svg";
 
 import logoPonorogo from "./assets/logo/rms.png";
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 // import material-Ui
 import {
@@ -137,7 +138,7 @@ function App() {
                   }}
                 >
                   {/* Logo Section */}
-                  <Box sx={{ display: "flex", alignItems: "center"  }}>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
                     <img
                       src={logoPonorogo}
                       alt="logo"
@@ -150,20 +151,28 @@ function App() {
                         fontWeight: "600",
                         fontStyle: "italic",
                         fontFamily: "Fugaz One",
-                        color:"black"
+                        color: "black",
                         // color: "#FC2F00",
-                        
                       }}
                     >
                       RMS Ponorogo
                     </Typography>
                   </Box>
 
-                  <Box sx={{ display: "flex", gap: 3, color: "black" }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      gap: 3,
+                      color: "black",
+                      "@media(max-width:1024px)": {
+                        display: "none"
+                      },
+                    }}
+                  >
                     {menuList.map((item, index) => {
                       const path = `/${item}`;
                       const isActive = activeLink === index;
-
+                    
                       return (
                         <Link
                           key={index}
@@ -182,9 +191,19 @@ function App() {
                       );
                     })}
                   </Box>
+                  {/* menu bar */}
+                  <Box sx={{
+                    display:"none",
+                        "@media(max-width:1024px)": {
+                          display: "block"
+                        },
+                  }} >
+                    <MenuOutlinedIcon className="text-red-600" fontSize="large"/>
+                  </Box>
 
                   {/* Book a Table Button */}
-                  <Box>
+                  {/* book table */}
+                  {/* <Box>
                     <Button
                       variant="contained"
                       color="primary"
@@ -196,7 +215,7 @@ function App() {
                     >
                       Book A Table
                     </Button>
-                  </Box>
+                  </Box> */}
                 </Container>
               </Toolbar>
             </AppBar>
@@ -209,7 +228,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
 
         {/* Footer */}
