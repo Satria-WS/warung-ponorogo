@@ -208,8 +208,6 @@ const Home = () => {
 
                 sx={{
                   bgcolor: "red",
-                  flexShrink:0,
-             
                 }}
                 size={{
                   xs: 12,
