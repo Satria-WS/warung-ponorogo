@@ -55,7 +55,7 @@ function App() {
   const handleMenuClose = () => {
     setMenuAnchorElx(null);
   };
-  console.log('menuAnchorEl?',menuAnchorElx)
+  console.log("menuAnchorEl?", menuAnchorElx);
   const iconList = [
     {
       icon: fb,
@@ -221,7 +221,7 @@ function App() {
                       onClick={handleMenuOpen} // Open the menu on click
                     />
                   </Box>
-          
+
                   {/* Pop-up menu (for mobile) */}
                   <Menu1
                     anchorEl={menuAnchorElx}
@@ -244,10 +244,14 @@ function App() {
                           handleMenuClose(); // Close the menu after selecting
                         }}
                       >
-                        <Link className="hover:font-semibold duration-300 cursor-pointer"  to={`/${item}`}>
-                        {`${item.charAt(0).toLocaleUpperCase()}${item.substring(1)}`}
-                        </Link>  
-                      
+                        <Link
+                          className="hover:font-semibold duration-300 cursor-pointer"
+                          to={`/${item}`}
+                        >
+                          {`${item
+                            .charAt(0)
+                            .toLocaleUpperCase()}${item.substring(1)}`}
+                        </Link>
                       </MenuItem>
                     ))}
 
