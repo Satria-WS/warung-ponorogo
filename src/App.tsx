@@ -57,6 +57,7 @@ function App() {
   const handleNavigate = () => {
     // console.log("Navigating to Home...");
     navigate("/");
+    // isActive = true;
   };
 
   // Open the menu (set the anchor element)
@@ -71,15 +72,15 @@ function App() {
   // console.log("menuAnchorEl?", menuAnchorElx);
 
   const menuList = ["home", "about", "menu", "contact"];
-  const locationIndex = menuList.indexOf(location.pathname.substring(1));
+  const locationIndex = location.pathname === "/" ? 0 : menuList.indexOf(location.pathname.substring(1));
 
   console.log("locationIndex", locationIndex);
-  const [activeLink, setActiveLink] = useState<any>(0); // Track the active link
+  // const [activeLink, setActiveLink] = useState<any>(0); // Track the active link
 
-  const handleClick = (path: number) => {
-    setActiveLink(path);
-    // setActiveLink(localStorage.setItem("activeLink", activeLink.toString()))
-  };
+  // const handleClick = (path: number) => {
+  //   setActiveLink(path);
+  //  setActiveLink(localStorage.setItem("activeLink", activeLink.toString()))
+  // };
 
   // update local storage for new tab
   // useEffect(() => {
@@ -141,6 +142,8 @@ function App() {
     return acc;
   }, []);
 
+  let isActive;
+ 
   return (
     <Fragment>
       {/* header */}
@@ -237,15 +240,16 @@ function App() {
                 >
                   {menuList.map((item, index) => {
                     const path = `/${item}`;
-                    const isActive = locationIndex === index;
-
+              
+                    isActive = locationIndex  === index ;
+                 
                     return (
                       <Link
                         key={index}
                         to={path}
-                        onClick={() => handleClick(index)}
+                        // onClick={() => handleClick(index)}
                         className={`hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold px-4 py-2 ${
-                          isActive ? "bg-[#DBDFD0] font-bold" : "bg-transparent"
+                          isActive  ? "bg-[#DBDFD0] font-bold" : "bg-transparent"
                         }`} // Apply active styles conditionally
                       >
                         {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
@@ -303,7 +307,7 @@ function App() {
                       // }}
                       key={index}
                       onClick={() => {
-                        handleClick(index);
+                        // handleClick(index);
                         handleMenuClose(); // Close the menu after selecting
                       }}
                     >
@@ -366,22 +370,7 @@ function App() {
                 nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
                 enim, quos quia?
               </p>
-              <ul className="flex gap-4">
-                {iconList.map((item, index) => (
-                  <>
-                    <li className="pointer" key={index}>
-                      <a href={item.link}>
-                        <img
-                          className="bg-red-700 rounded-full"
-                          src={item.icon}
-                          alt={item.altText}
-                        />
-                      </a>
-                    </li>
-                  </>
-                ))}
-              </ul>
-              <div></div>
+  
             </div>
             {/* col-2 */}
             <div className="flex flex-col max-xl:col-span-2 items-center space-y-4">
