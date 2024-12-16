@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
       );
   };
 
-  // // // Create refs for each chapter
+// Create refs for each chapter
   // const sectionLocation = useRef(null);
   // // Scroll function to smooth scroll with an offset
   // const scrollToChapter = (ref: any) => {
@@ -258,8 +258,7 @@ const Contact: React.FC = () => {
             {status}
           </Box>
         )}
-        {/* this is map */}
-        <h2 ref={sectionLocation}>Chapter 4</h2>
+    
         <Box
           ref={sectionLocation}
           component="div"
