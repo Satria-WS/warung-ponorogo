@@ -79,6 +79,23 @@ const About = () => {
   return (
     <>
       <CssBaseline />
+            <Container maxWidth="xl">
+              <Box sx={{ padding: "3rem" }}>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontFamily: "Playfair Display",
+                    textAlign: "center",
+                  }}
+                >
+                  About Us
+                </Typography>
+                <p className="text-center py-3 max-w-[500px] mx-auto">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
+                  dolorem iure numquam similique nisi eius nostrum qui, ex animi?
+                </p>
+              </Box>
+            </Container>
       <Container maxWidth="xl">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] py-20 h-full ">
           {/* col-1 */}
