@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 // import router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {  Routes, Route , useNavigate } from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -45,6 +45,14 @@ import Contact from "./components/contact/Contact";
 function App() {
   // State for the menu visibility
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
+  // hook navigate to function
+  const navigate = useNavigate();
+
+  //navigation function 
+  const handleNavigate = () => {
+    console.log("Navigating to Home...");
+    navigate('/');
+  }
 
   // Open the menu (set the anchor element)
   const handleMenuOpen = (event: any) => {
@@ -97,7 +105,7 @@ function App() {
 
   const [activeLink, setActiveLink] = useState(0); // Track the active link
 
-  const handleClick = (path: any) => {
+  const handleClick = (path: number) => {
     setActiveLink(path);
   };
 
@@ -115,7 +123,7 @@ function App() {
 
   return (
     <Fragment>
-      <Router>
+     
         {/* header */}
         <header>
           {/* top */}
@@ -152,8 +160,9 @@ function App() {
                     padding: "1.2rem",
                   }}
                 >
+                  {/* Bug link */}
                   {/* Logo Section */}
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box onClick={handleNavigate}  sx={{ display: "flex", alignItems: "center" }}>
                     <img
                       src={logoPonorogo}
                       alt="logo"
@@ -400,7 +409,7 @@ function App() {
             </div>
           </Box>
         </footer>
-      </Router>
+    
     </Fragment>
   );
 }
