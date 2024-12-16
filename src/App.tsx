@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 // import router
-import { Routes, Route, useNavigate , useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -10,6 +10,7 @@ import fb from "./assets/icon/fb.svg";
 import github from "./assets/icon/github.svg";
 import instagram from "./assets/icon/instagram.svg";
 import twitter from "./assets/icon/twitter.svg";
+import goFood from "./assets/logo/logo-goFood.svg";
 // import logo
 import logoHeader from "./assets/logo/logo-header.svg";
 import logoFooter from "./assets/logo/logo-footer.svg";
@@ -47,10 +48,10 @@ function App() {
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
   // hook navigate to function
   const navigate = useNavigate();
-    // Get the current location (path)
+  // Get the current location (path)
   const location = useLocation();
-  
-  console.log('location?', location);
+
+  console.log("location?", location);
 
   //navigation function
   const handleNavigate = () => {
@@ -71,8 +72,8 @@ function App() {
 
   const menuList = ["home", "about", "menu", "contact"];
   const locationIndex = menuList.indexOf(location.pathname.substring(1));
-  
-  console.log('locationIndex', locationIndex);
+
+  console.log("locationIndex", locationIndex);
   const [activeLink, setActiveLink] = useState<any>(0); // Track the active link
 
   const handleClick = (path: number) => {
@@ -87,25 +88,30 @@ function App() {
   // console.log("localStorage?", localStorage.getItem("activeLink"))
 
   const iconList = [
+    // {
+    //   icon: fb,
+    //   link: "#",
+    //   altText: "facebook",
+    // },
+    // {
+    //   icon: github,
+    //   link: "#",
+    //   altText: "github",
+    // },
+    // {
+    //   icon: instagram,
+    //   link: "#",
+    //   altText: "instagram",
+    // },
+    // {
+    //   icon: twitter,
+    //   link: "#",
+    //   altText: "twitter",
+    // },
     {
-      icon: fb,
+      icon: goFood,
       link: "#",
-      altText: "facebook",
-    },
-    {
-      icon: github,
-      link: "#",
-      altText: "github",
-    },
-    {
-      icon: instagram,
-      link: "#",
-      altText: "instagram",
-    },
-    {
-      icon: twitter,
-      link: "#",
-      altText: "twitter",
+      altText: "goFood",
     },
   ];
   const imageFooter = [
@@ -128,7 +134,7 @@ function App() {
     acc.push(
       <li className="pointer" key={index}>
         <a href={item.link}>
-          <img src={item.icon} alt={item.altText} />
+          <img width='30px' src={item.icon} alt={item.altText} />
         </a>
       </li>
     );
@@ -140,7 +146,7 @@ function App() {
       {/* header */}
       <header className="sticky w-full z-10 top-0">
         {/* top */}
-        <div className="bg-darkGray">
+        <div className="bg-darkGray max-sm:hidden ">
           <div className="container flex justify-between py-2">
             {/* col-1 */}
             <div className="flex text-white gap-10">
@@ -253,6 +259,7 @@ function App() {
                 {/* Mobile menu icon */}
                 <Box
                   sx={{
+                    cursor: "pointer",
                     display: "none",
                     "@media(max-width:1024px)": {
                       display: "block",
@@ -268,6 +275,7 @@ function App() {
 
                 {/* Pop-up menu (for mobile) */}
                 <Menu1
+                  sx={{}}
                   anchorEl={menuAnchorElx}
                   open={Boolean(menuAnchorElx)}
                   onClose={handleMenuClose} // Close the menu
@@ -281,22 +289,30 @@ function App() {
                   }}
                 >
                   {menuList.map((item, index) => (
-                    <MenuItem
+                    <Link
+                     
+                      to={`/${item}`}
+                      //   sx={{
+                      //   transitionDuration:"300ms",
+                      //   "&:hover": {
+                      //     // hover: font - semibold duration- 300 cursor- pointer
+                      //     fontWeight: 600,
+                      //     cursor: "pointer",
+
+                      //     }
+                      // }}
                       key={index}
                       onClick={() => {
                         handleClick(index);
                         handleMenuClose(); // Close the menu after selecting
                       }}
                     >
-                      <Link
-                        className="hover:font-semibold duration-300 cursor-pointer"
-                        to={`/${item}`}
-                      >
+                      <MenuItem className="hover:font-semibold duration-300">
                         {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
                           1
                         )}`}
-                      </Link>
-                    </MenuItem>
+                      </MenuItem>
+                    </Link>
                   ))}
 
                   {/* <Link
