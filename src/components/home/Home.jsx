@@ -21,6 +21,7 @@ import breakfast from "../../assets/home/ourMenu/breakfast.svg";
 import dishes from "../../assets/home/ourMenu/dishes.svg";
 import drink from "../../assets/home/ourMenu/drinks.svg";
 import desserts from "../../assets/home/ourMenu/desserts.svg";
+import MyLocationIcon from "@mui/icons-material/MyLocation";
 
 // image
 
@@ -44,8 +45,17 @@ import image_2 from "../../assets/home/image-2.png";
 import image_3 from "../../assets/home/image-3.png";
 import image_4 from "../../assets/home/image-4.png";
 import image_5 from "../../assets/home/image-5.png";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+   //navigation function
+   const handleNavigate = () => {
+    // console.log("Navigating to Home...");
+    //  navigate("/contact");
+     navigate("/contact#location");
+    //  href to = #location
+  };
   const listIcon = [
     {
       imageList: breakfast,
@@ -95,6 +105,7 @@ const Home = () => {
       text: "",
     },
   ];
+  
 
   return (
     <>
@@ -103,7 +114,7 @@ const Home = () => {
         {/* Hero */}
         <Box
           sx={{
-            position:"relative",
+            position: "relative",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -144,31 +155,35 @@ const Home = () => {
               }}
             >
               {/* book table */}
-              <Button
-                className="bg-[#AD343E!important]"
+              <Button 
+                className="bg-[#AD343E!important] hover:shadow-xl"
                 sx={{
                   padding: "20px 32px",
                   borderRadius: "999px",
                   fontWeight: "600",
+                  textTransform: "none",
                 }}
                 variant="contained"
                 color="primary"
               >
-                Book A table
+                Book A Menu
               </Button>
               <Button
-                className="bg-[white!important]"
+                onClick={handleNavigate}
+                className="bg-[white!important] hover:shadow-xl"
                 sx={{
                   padding: "20px 32px",
                   borderRadius: "999px",
-                  border: "1px solid black",
+                  border: "none",
                   fontWeight: "600",
                   color: "#2C2F24",
+                  textTransform: "none",
                 }}
                 variant="outlined"
                 color="primary"
               >
-                Explore menu
+                <MyLocationIcon />
+                <a href="#contact" className="pl-2">Location</a>
               </Button>
             </Box>
           </Box>
