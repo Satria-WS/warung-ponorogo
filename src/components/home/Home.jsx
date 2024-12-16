@@ -51,10 +51,9 @@ const Home = () => {
   const navigate = useNavigate();
    //navigation function
    const handleNavigate = () => {
-    // console.log("Navigating to Home...");
-    //  navigate("/contact");
-     navigate("/contact#location");
-    //  href to = #location
+     navigate("/contact");
+     
+
   };
   const listIcon = [
     {
