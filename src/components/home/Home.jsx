@@ -49,11 +49,10 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-   //navigation function
-   const handleNavigate = () => {
-     navigate("/contact");
-     
-
+  //navigation function
+  const handleNavigate = (object) => {
+    //  navigate("/contact");
+    navigate(object);
   };
   const listIcon = [
     {
@@ -104,7 +103,6 @@ const Home = () => {
       text: "",
     },
   ];
-  
 
   return (
     <>
@@ -154,7 +152,8 @@ const Home = () => {
               }}
             >
               {/* book table */}
-              <Button 
+              <Button
+                onClick={() => handleNavigate("/menu")}
                 className="bg-[#AD343E!important] hover:shadow-xl"
                 sx={{
                   padding: "20px 32px",
@@ -168,7 +167,7 @@ const Home = () => {
                 Book A Menu
               </Button>
               <Button
-                onClick={handleNavigate}
+                onClick={() => handleNavigate("/contact")}
                 className="bg-[white!important] hover:shadow-xl"
                 sx={{
                   padding: "20px 32px",
@@ -182,7 +181,7 @@ const Home = () => {
                 color="primary"
               >
                 <MyLocationIcon />
-                <a href="#contact" className="pl-2">Location</a>
+                <span className="pl-2">Location</span>
               </Button>
             </Box>
           </Box>
