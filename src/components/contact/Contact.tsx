@@ -8,7 +8,8 @@ import {
   CssBaseline,
 } from "@mui/material";
 import "./contact.css";
-import { useRef, useState, FormEvent } from "react";
+import { useRef, useState, FormEvent, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 // import email
 import emailjs from "@emailjs/browser";
 // import logoP from "../../assets/logo/logo-ponorogo.svg";
@@ -27,6 +28,7 @@ import whatsap from "../../assets/logo/logo-whatsap.svg";
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null); // Type the form reference as HTMLFormElement
   const [status, setStatus] = useState<string | null>(null);
+  const location = useLocation();
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
@@ -72,6 +74,20 @@ const Contact: React.FC = () => {
       );
   };
 
+  // Create refs for each chapter
+  const sectionLocation = useRef(null);
+  const chapter10Ref = useRef(null);
+
+  // Scroll function to smooth scroll with an offset
+  const scrollToChapter = (ref: any) => {
+    const offset = 100; // offset distance from the top
+    const position = ref.current.offsetTop - offset;
+
+    window.scrollTo({
+      top: position,
+      behavior: "smooth",
+    });
+  };
   // contact List
   const contactList = [
     {
@@ -94,9 +110,12 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <CssBaseline/>
+      <CssBaseline />
       <Container maxWidth="xl">
-        <Box py="3rem" >
+        <button onClick={() => scrollToChapter(sectionLocation)}>
+          Jump to Chapter 4
+        </button>
+        <Box py="3rem">
           <Typography
             variant="h2"
             sx={{
@@ -224,15 +243,21 @@ const Contact: React.FC = () => {
           </Box>
         )}
         {/* this is map */}
-        <Box  sx={{ textAlign: "center", padding: "7rem 2rem 4rem 2rem" }}>
+        <h2 ref={sectionLocation}>Chapter 4</h2>
+        <Box
+          ref={sectionLocation}
+          component="div"
+          sx={{ textAlign: "center", padding: "7rem 2rem 4rem 2rem" }}
+        >
           <Typography
+            //  component='a'
             variant="h2"
             sx={{
               fontFamily: "Playfair Display",
               marginBottom: "1.5rem", // Adds space below the title
             }}
           >
-            Location
+            <span>Location</span>
           </Typography>
           <Box
             sx={{
@@ -250,6 +275,7 @@ const Contact: React.FC = () => {
               height="100%"
               style={{ border: 0 }}
               title="Map Location"
+              id="location"
             />
           </Box>
         </Box>
@@ -309,7 +335,7 @@ const Contact: React.FC = () => {
                 </Box>
               </>
             ))}
-    {/* transition: "transform 0.3s ease",
+            {/* transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translate(0,-10px)",
                     }, */}
