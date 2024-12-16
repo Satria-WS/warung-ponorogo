@@ -74,19 +74,36 @@ const Contact: React.FC = () => {
       );
   };
 
-  // Create refs for each chapter
-  const sectionLocation = useRef(null);
+  // // // Create refs for each chapter
+  // const sectionLocation = useRef(null);
+  // // Scroll function to smooth scroll with an offset
+  // const scrollToChapter = (ref: any) => {
+  //   const offset = 100; // offset distance from the top
+  //   const position = ref.current.offsetTop - offset;
 
-  // Scroll function to smooth scroll with an offset
-  const scrollToChapter = (ref: any) => {
-    const offset = 100; // offset distance from the top
-    const position = ref.current.offsetTop - offset;
+  //   window.scrollTo({
+  //     top: position,
+  //     behavior: "smooth",
+  //   });
+  // };
 
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  };
+
+  const sectionLocation = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    // When the component mounts, check if the ref is available and scroll to it
+    if (sectionLocation.current) {
+      const offset = 100; // Offset to ensure the section is not at the very top
+      const position = sectionLocation.current.offsetTop - offset;
+
+      window.scrollTo({
+        top: position,
+        behavior: 'smooth', // Smooth scrolling
+      });
+    }
+  }, []);
+  
+
   // contact List
   const contactList = [
     {
@@ -111,9 +128,9 @@ const Contact: React.FC = () => {
     <>
       <CssBaseline />
       <Container maxWidth="xl">
-        <button onClick={() => scrollToChapter(sectionLocation)}>
+        {/* <button onClick={() => scrollToChapter(sectionLocation)}>
           Jump to Chapter 4
-        </button>
+        </button> */}
         <Box py="3rem">
           <Typography
             variant="h2"
