@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 // import router
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate , useLocation } from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -47,6 +47,10 @@ function App() {
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
   // hook navigate to function
   const navigate = useNavigate();
+    // Get the current location (path)
+  const location = useLocation();
+  
+  console.log('location?', location);
 
   //navigation function
   const handleNavigate = () => {
@@ -66,20 +70,22 @@ function App() {
   // console.log("menuAnchorEl?", menuAnchorElx);
 
   const menuList = ["home", "about", "menu", "contact"];
-
-
-  const [activeLink, setActiveLink] = useState(localStorage.getItem(activeLink.toString()) ||); // Track the active link
-
+  const locationIndex = menuList.indexOf(location.pathname.substring(1));
+  
+  console.log('locationIndex', locationIndex);
+  const [activeLink, setActiveLink] = useState<any>(0); // Track the active link
 
   const handleClick = (path: number) => {
     setActiveLink(path);
+    // setActiveLink(localStorage.setItem("activeLink", activeLink.toString()))
   };
 
   // update local storage for new tab
-  useEffect(() => {
-    localStorage.setItem(activeLink.toString() , "0")
-  },[])
-console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
+  // useEffect(() => {
+  //   localStorage.setItem("activeLink", activeLink.toString());
+  // }, []);
+  // console.log("localStorage?", localStorage.getItem("activeLink"))
+
   const iconList = [
     {
       icon: fb,
@@ -116,8 +122,6 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
       src: image_5,
     },
   ];
-
-
 
   // Specify the type for the accumulator as an array of JSX elements
   const listItems = iconList.reduce<JSX.Element[]>((acc, item, index) => {
@@ -157,7 +161,11 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
         </div>
         {/* bottom */}
         <nav>
-          <AppBar className="" position="relative" sx={{ backgroundColor: "#F9F9F7" }}>
+          <AppBar
+            className=""
+            position="relative"
+            sx={{ backgroundColor: "#F9F9F7" }}
+          >
             <Toolbar>
               <Container
                 disableGutters
@@ -177,18 +185,18 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
                     display: "flex",
                     alignItems: "center",
                     cursor: "pointer",
-                    transition:"transform 0.3s ease",
+                    transition: "transform 0.3s ease",
                     "&:hover": {
-                     transform:"scale(1.1)"
-                   }
+                      transform: "scale(1.1)",
+                    },
                   }}
                 >
                   <img
                     src={logoPonorogo}
                     alt="logo"
                     style={{
-                      height: "clamp(50px, 10vw, 100px)", 
-                      marginRight: "10px"
+                      height: "clamp(50px, 10vw, 100px)",
+                      marginRight: "10px",
                     }}
                   />
                   <Typography
@@ -223,7 +231,7 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
                 >
                   {menuList.map((item, index) => {
                     const path = `/${item}`;
-                    const isActive = activeLink === index;
+                    const isActive = locationIndex === index;
 
                     return (
                       <Link
@@ -371,6 +379,7 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
                 {menuList.map((item, index) => (
                   <>
                     <Link
+                      key={index}
                       className="hover:text-white duration-300 cursor-pointer block"
                       to={`/${item}`}
                     >
@@ -404,11 +413,11 @@ console.log('localStorage?' ,localStorage.getItem(activeLink.toString()))
                 >
                   {imageFooter.map((image, index) => (
                     <Grid2
+                      key={index}
                       size={{
                         xs: 12,
                         md: 6,
                       }}
-                      key={index}
                     >
                       {/* Use size instead of xs */}
                       <Box
