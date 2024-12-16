@@ -103,13 +103,14 @@ const Home = () => {
         {/* Hero */}
         <Box
           sx={{
+            position:"relative",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
             backgroundImage: `url(${backgroundImage})`,
             width: "100%",
-            height: "750px",
+            minHeight: "750px",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             border: "1px solid red",
