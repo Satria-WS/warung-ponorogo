@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
 
   // Create refs for each chapter
   const sectionLocation = useRef(null);
-  const chapter10Ref = useRef(null);
+
 
   // Scroll function to smooth scroll with an offset
   const scrollToChapter = (ref: any) => {
