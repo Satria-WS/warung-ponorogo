@@ -14,7 +14,7 @@ import {
   Divider,
   CssBaseline,
 } from "@mui/material";
-import backgroundImage from "../../assets/home/image-1.png";
+import backgroundImage from "../../assets/home/landing.png";
 import CardMenu from "./CardMenu";
 // icon
 import breakfast from "../../assets/home/ourMenu/breakfast.svg";
@@ -75,26 +75,23 @@ const Home = () => {
     {
       imageList: breakfast,
       title: "Breakfast",
-      text: "",
-      linkUrl: "",
+      text: "Nikmati sarapan khas Ponorogo dengan berbagai hidangan lezat seperti nasi pecel dan soto.",
     },
     {
       imageList: dishes,
       title: "Dishes",
-      text: "",
+      text: "Sajian utama Ponorogo, seperti nasi pecel, tongseng, dan sate ayam, yang menggugah selera.",
       linkUrl: "",
     },
     {
       imageList: drink,
       title: "Drink",
-      text: "",
-      linkUrl: "",
+      text: "Minuman segar khas Ponorogo seperti es dawet dan es kelapa muda untuk melengkapi santapan Anda.",
     },
     {
       imageList: desserts,
       title: "Desserts",
-      text: "",
-      linkUrl: "",
+      text: "Nikmati manisnya kue khas Ponorogo seperti klepon dan srabi, penutup yang sempurna.",
     },
   ];
 
@@ -153,6 +150,7 @@ const Home = () => {
               variant="h2"
               sx={{
                 fontFamily: "Playfair Display",
+                
               }}
             >
               Cita Rasa Ponorogo Rasakan Sensasinya!
@@ -215,7 +213,7 @@ const Home = () => {
             sx={{
               fontFamily: "Playfair Display",
               textAlign: "center",
-              padding:"2rem 0 2rem 0"
+              padding: "2rem 0 2rem 0",
             }}
           >
             Browse Our Menu
@@ -234,6 +232,7 @@ const Home = () => {
             {/* {Array.from(Array(4)).map((_, index) => ( */}
             {listIcon.map((icon, index) => (
               <Grid2
+                onClick={() => handleNavigate("/menu")}
                 item
                 // xs={2} // Full width on mobile
                 // sm={6} // 50% width on small screens (tablets)
@@ -288,30 +287,38 @@ const Home = () => {
                       flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
+                     
                     }}
                   >
                     {/* Title */}
-                    <Typography variant="h5" component="div">
+                    <Typography sx={{
+                       fontWeight:"600"
+                    }} variant="h5" component="div">
                       {icon.title}
                     </Typography>
 
                     {/* Description */}
                     <Typography
-                      sx={{ textAlign: "center" }}
+                      sx={{ textAlign: "center", }}
                       variant="body2"
                       color="text.secondary"
-                      paragraph
+                      padding="1rem 0"
                     >
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Ullam, quibusdam.
+                      {icon.text}
                     </Typography>
 
                     {/* Button */}
-                    <Button sx={{
-                      bgcolor: "white",
-                      color: "red",
-                      textTransform:"none"
-                    }} size="small" variant="contained" color="primary">
+                    <Button
+                      sx={{
+                        bgcolor: "white",
+                        color: "#AD343E",
+                        textTransform: "none",
+                        fontWeight: 600,
+                      }}
+                      size="small"
+                      variant="contained"
+                      color="primary"
+                    >
                       Explore Menu
                     </Button>
                   </CardContent>
@@ -365,19 +372,22 @@ const Home = () => {
                   fontFamily: "Playfair Display",
                 }}
               >
-                We provide healthy food for your family
+                Kami menyediakan makanan sehat untuk keluarga Anda
               </Typography>
               <p className="text-[#2C2F24] font-semibold">
-                Our story began with a vision to create a unique dining
-                experience that merges fine dining, exceptional service, and a
-                vibrant ambiance. Rooted in city's rich culinary culture, we aim
-                to honor our local roots while infusing a global palate.
+                Cerita kami dimulai dengan visi untuk menciptakan pengalaman
+                bersantap yang unik yang menggabungkan hidangan berkualitas,
+                pelayanan luar biasa, dan suasana yang hidup. Berakar pada
+                budaya kuliner yang kaya di Ponorogo, kami bertujuan untuk
+                menghormati akar lokal kami sambil memadukan cita rasa global.
               </p>
               <p>
-                At place, we believe that dining is not just about food, but
-                also about the overall experience. Our staff, renowned for their
-                warmth and dedication, strives to make every visit an
-                unforgettable event.
+                Di tempat ini, kami percaya bahwa bersantap bukan hanya tentang
+                makanan, tetapi juga tentang pengalaman secara keseluruhan. Staf
+                kami, yang dikenal dengan kehangatan dan dedikasinya, berusaha
+                untuk menjadikan setiap kunjungan sebagai acara yang tak
+                terlupakan."** Semoga terjemahan ini sesuai dengan yang Anda
+                harapkan!
               </p>
             </div>
           </div>
@@ -393,7 +403,7 @@ const Home = () => {
               padding: "25px 25px",
             }}
           >
-            We provide healthy food for your family
+            Menawarkan berbagai event yang menarik
           </Typography>
           <Grid2
             container
