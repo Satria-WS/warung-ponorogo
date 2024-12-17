@@ -1,4 +1,4 @@
-import React, { useRef }  from "react";
+import React, { useRef } from "react";
 import {
   Box,
   Typography,
@@ -58,18 +58,18 @@ const Home = () => {
 
   const sectionHome = useRef(null);
 
-    useEffect(() => {
-      // When the component mounts, check if the ref is available and scroll to it
-      if (sectionHome.current) {
-        const offset = 200; // Offset to ensure the section is not at the very top
-        const position = sectionHome.current.offsetTop - offset;
-  
-        window.scrollTo({
-          top: position,
-          behavior: "smooth", // Smooth scrolling
-        });
-      }
-    }, []);
+  useEffect(() => {
+    // When the component mounts, check if the ref is available and scroll to it
+    if (sectionHome.current) {
+      const offset = 200; // Offset to ensure the section is not at the very top
+      const position = sectionHome.current.offsetTop - offset;
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
 
   const listIcon = [
     {
@@ -127,7 +127,7 @@ const Home = () => {
       <Container disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
-          ref={sectionHome}
+          // ref={sectionHome}
           sx={{
             position: "relative",
             display: "flex",
@@ -150,16 +150,16 @@ const Home = () => {
             }}
           >
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{
                 fontFamily: "Playfair Display",
               }}
             >
-              Best food for your taste
+              Cita Rasa Ponorogo Rasakan Sensasinya!
             </Typography>
             <p className="text-xl text-[#2C2F24] font-semibold py-10">
-              Discover delectable cuisine and unforgettable moments in our
-              welcoming, culinary haven.
+              Selamat datang di Rumah Makan Ponorogo! dan Rasakan sensasi
+              kuliner Ponorogo dalam setiap suapan.
             </p>
             <Box
               sx={{
@@ -215,6 +215,7 @@ const Home = () => {
             sx={{
               fontFamily: "Playfair Display",
               textAlign: "center",
+              padding:"2rem 0 2rem 0"
             }}
           >
             Browse Our Menu
@@ -306,7 +307,11 @@ const Home = () => {
                     </Typography>
 
                     {/* Button */}
-                    <Button size="small" variant="contained" color="primary">
+                    <Button sx={{
+                      bgcolor: "white",
+                      color: "red",
+                      textTransform:"none"
+                    }} size="small" variant="contained" color="primary">
                       Explore Menu
                     </Button>
                   </CardContent>
