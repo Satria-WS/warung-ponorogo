@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
       );
   };
 
-// Create refs for each chapter
+  // Create refs for each chapter
   // const sectionLocation = useRef(null);
   // // Scroll function to smooth scroll with an offset
   // const scrollToChapter = (ref: any) => {
@@ -87,7 +87,6 @@ const Contact: React.FC = () => {
   //   });
   // };
 
-
   const sectionLocation = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
@@ -98,11 +97,10 @@ const Contact: React.FC = () => {
 
       window.scrollTo({
         top: position,
-        behavior: 'smooth', // Smooth scrolling
+        behavior: "smooth", // Smooth scrolling
       });
     }
   }, []);
-  
 
   // contact List
   const contactList = [
@@ -258,7 +256,7 @@ const Contact: React.FC = () => {
             {status}
           </Box>
         )}
-    
+
         <Box
           ref={sectionLocation}
           component="div"
