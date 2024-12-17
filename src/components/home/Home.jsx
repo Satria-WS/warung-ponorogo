@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef }  from "react";
 import {
   Box,
   Typography,
@@ -46,6 +46,7 @@ import image_3 from "../../assets/home/image-3.png";
 import image_4 from "../../assets/home/image-4.png";
 import image_5 from "../../assets/home/image-5.png";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -54,6 +55,22 @@ const Home = () => {
     //  navigate("/contact");
     navigate(object);
   };
+
+  const sectionHome = useRef(null);
+
+    useEffect(() => {
+      // When the component mounts, check if the ref is available and scroll to it
+      if (sectionHome.current) {
+        const offset = 100; // Offset to ensure the section is not at the very top
+        const position = sectionHome.current.offsetTop - offset;
+  
+        window.scrollTo({
+          top: position,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    }, []);
+
   const listIcon = [
     {
       imageList: breakfast,
@@ -110,6 +127,7 @@ const Home = () => {
       <Container disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
+          ref={sectionHome}
           sx={{
             position: "relative",
             display: "flex",
