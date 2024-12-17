@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Box,
   Typography,
@@ -76,26 +76,41 @@ const About = () => {
     },
   ];
 
+  const sectionAbout = useRef(null);
+
+  useEffect(() => {
+    // When the component mounts, check if the ref is available and scroll to it
+    if (sectionAbout.current) {
+      const offset = 200; // Offset to ensure the section is not at the very top
+      const position = sectionAbout.current.offsetTop - offset;
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
+
   return (
     <>
       <CssBaseline />
-            <Container maxWidth="xl">
-              <Box sx={{ padding: "3rem" }}>
-                <Typography
-                  variant="h2"
-                  sx={{
-                    fontFamily: "Playfair Display",
-                    textAlign: "center",
-                  }}
-                >
-                  About Us
-                </Typography>
-                <p className="text-center py-3 max-w-[500px] mx-auto">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
-                  dolorem iure numquam similique nisi eius nostrum qui, ex animi?
-                </p>
-              </Box>
-            </Container>
+      <Container  maxWidth="xl">
+        <Box ref={sectionAbout} sx={{ padding: "3rem" }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "Playfair Display",
+              textAlign: "center",
+            }}
+          >
+            About Us
+          </Typography>
+          <p className="text-center py-3 max-w-[500px] mx-auto">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
+            dolorem iure numquam similique nisi eius nostrum qui, ex animi?
+          </p>
+        </Box>
+      </Container>
       <Container maxWidth="xl">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] py-20 h-full ">
           {/* col-1 */}
@@ -299,7 +314,7 @@ const About = () => {
                         end={`${item.number}`}
                         duration={2.75}
                       />
-                      {item.number === '79' ? ' %' : null}
+                      {item.number === "79" ? " %" : null}
                     </Typography>
                     <span className="text-xs font-semibold">{item.text}</span>
                   </div>
