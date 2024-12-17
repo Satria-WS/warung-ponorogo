@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 // icon
 import fb from "./assets/icon/fb.svg";
@@ -29,6 +30,7 @@ import {
   Grid2,
   Menu as Menu1,
   MenuItem,
+  Fab,
 } from "@mui/material";
 
 import { Link } from "react-router-dom"; // for routing links if needed
@@ -72,7 +74,10 @@ function App() {
   // console.log("menuAnchorEl?", menuAnchorElx);
 
   const menuList = ["home", "about", "menu", "contact"];
-  const locationIndex = location.pathname === "/" ? 0 : menuList.indexOf(location.pathname.substring(1));
+  const locationIndex =
+    location.pathname === "/"
+      ? 0
+      : menuList.indexOf(location.pathname.substring(1));
 
   console.log("locationIndex", locationIndex);
   // const [activeLink, setActiveLink] = useState<any>(0); // Track the active link
@@ -135,7 +140,7 @@ function App() {
     acc.push(
       <li className="pointer" key={index}>
         <a href={item.link}>
-          <img width='30px' src={item.icon} alt={item.altText} />
+          <img width="30px" src={item.icon} alt={item.altText} />
         </a>
       </li>
     );
@@ -143,7 +148,7 @@ function App() {
   }, []);
 
   let isActive;
- 
+
   return (
     <Fragment>
       {/* header */}
@@ -240,16 +245,16 @@ function App() {
                 >
                   {menuList.map((item, index) => {
                     const path = `/${item}`;
-              
-                    isActive = locationIndex  === index ;
-                 
+
+                    isActive = locationIndex === index;
+
                     return (
                       <Link
                         key={index}
                         to={path}
                         // onClick={() => handleClick(index)}
                         className={`hover:bg-[#DBDFD0] rounded-full duration-300 font-semibold px-4 py-2 ${
-                          isActive  ? "bg-[#DBDFD0] font-bold" : "bg-transparent"
+                          isActive ? "bg-[#DBDFD0] font-bold" : "bg-transparent"
                         }`} // Apply active styles conditionally
                       >
                         {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
@@ -294,7 +299,6 @@ function App() {
                 >
                   {menuList.map((item, index) => (
                     <Link
-                     
                       to={`/${item}`}
                       //   sx={{
                       //   transitionDuration:"300ms",
@@ -342,7 +346,30 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      {/*floating button  */}
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: "4rem",
+          right: "5rem",
+          zIndex: 1000,
+        }}
+      >
+        <Fab
+          color="primary"
+          aria-label="whatsapp"
+          sx={{
+            backgroundColor: "#25D366", // WhatsApp's signature green color
+            "&:hover": {
+              backgroundColor: "#128C7E", // Darker shade on hover
+            },
+            width: { xs: 56, sm: 64, md: 80 }, // Responsive size for different screen sizes
+            height: { xs: 56, sm: 64, md: 80 }, // Adjust width and height together
+          }}
+        >
+          <WhatsAppIcon sx={{ fontSize: "3rem" }} />
+        </Fab>
+      </Box>
       {/* Footer */}
       <footer>
         <Box sx={{ backgroundColor: "#474747" }}>
@@ -370,7 +397,6 @@ function App() {
                 nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
                 enim, quos quia?
               </p>
-  
             </div>
             {/* col-2 */}
             <div className="flex flex-col max-xl:col-span-2 items-center space-y-4">
