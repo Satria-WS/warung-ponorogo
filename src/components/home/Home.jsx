@@ -61,7 +61,7 @@ const Home = () => {
     useEffect(() => {
       // When the component mounts, check if the ref is available and scroll to it
       if (sectionHome.current) {
-        const offset = 100; // Offset to ensure the section is not at the very top
+        const offset = 200; // Offset to ensure the section is not at the very top
         const position = sectionHome.current.offsetTop - offset;
   
         window.scrollTo({
