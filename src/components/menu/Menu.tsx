@@ -46,6 +46,7 @@ const Menu = () => {
     return menuList.filter((item) => item.type === type); // Filter by type (Breakfast, Main Dishes, Drinks, Desserts)
   };
 
+
   const menuList = [
     {
       image: eggs,
@@ -104,12 +105,27 @@ const Menu = () => {
       type: "Breakfast",
     },
   ];
+
+    const sectionMenu = React.useRef<HTMLHeadingElement | null>(null);
+  
+    React.useEffect(() => {
+      // When the component mounts, check if the ref is available and scroll to it
+      if (sectionMenu.current) {
+        const offset = 200; // Offset to ensure the section is not at the very top
+        const position = sectionMenu.current.offsetTop - offset;
+  
+        window.scrollTo({
+          top: position,
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+    }, []);
   return (
     <>
       <CssBaseline />
       {/* title */}
-      <Container maxWidth="xl">
-        <Box sx={{ padding: "3rem" }}>
+      <Container  maxWidth="xl">
+        <Box ref={sectionMenu} sx={{ padding: "3rem" }}>
           <Typography
             variant="h2"
             sx={{
