@@ -364,7 +364,7 @@ const Contact: React.FC = () => {
                   "https://gofood.co.id/jakarta/restaurant/warung-ponorogo-5912a9a5-d9bd-482b-86de-b42291b22576"
                 )
               }
-              className="borderpx-16 max-xl:col-span-1 hover:-translate-y-3  duration-300 cursor-pointer"
+              className=" px-16 max-xl:col-span-1 hover:-translate-y-3  duration-300 cursor-pointer"
             >
               <div className="bg-red-600 h-full flex items-center justify-center py-10 shadow-xl rounded-2xl ">
                 <img className="w-[100px]" src={goFood} alt="goFood" />
@@ -377,7 +377,7 @@ const Contact: React.FC = () => {
                   "https://api.whatsapp.com/send/?phone=%2B6281280807385&text&type=phone_number&app_absent=0"
                 )
               }
-              className="border  px-16 hover:-translate-y-3 duration-300 cursor-pointer"
+              className="  px-16 hover:-translate-y-3 duration-300 cursor-pointer"
             >
               <div className="bg-white h-full flex items-center justify-center py-10 shadow-xl rounded-2xl">
                 <img className="w-[100px]" src={whatsap} alt="goFood" />
