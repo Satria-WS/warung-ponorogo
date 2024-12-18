@@ -45,6 +45,12 @@ import image_4 from "./assets/home/image-4.png";
 import image_5 from "./assets/home/image-5.png";
 import Contact from "./components/contact/Contact";
 
+// import image for footer
+import imageF_1 from "./assets/footer/image-1.png";
+import imageF_2 from "./assets/footer/image-2.png";
+import imageF_3 from "./assets/footer/image-3.png";
+import imageF_4 from "./assets/footer/image-4.png";
+
 function App() {
   // State for the menu visibility
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
@@ -122,16 +128,16 @@ function App() {
   ];
   const imageFooter = [
     {
-      src: image_2,
+      src: imageF_1,
     },
     {
-      src: image_3,
+      src: imageF_2,
     },
     {
-      src: image_4,
+      src: imageF_3,
     },
     {
-      src: image_5,
+      src: imageF_4,
     },
   ];
 
@@ -424,13 +430,13 @@ function App() {
             </div>
             {/* col-3 */}
             <div className=" max-xl:col-span-3">
-              <Typography
+              {/* <Typography
                 align="center"
                 variant="h6"
                 sx={{ color: "white", fontWeight: "600" }}
               >
                 Follow Us On Instagram
-              </Typography>
+              </Typography> */}
               {/* picture */}
               <div className="py-3">
                 <Grid2
