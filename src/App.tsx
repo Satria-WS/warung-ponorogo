@@ -392,10 +392,10 @@ function App() {
                 </Typography>
               </div>
               <p className="py-5 text-lightOlive">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur in tempore, eos labore vero ratione esse deserunt
-                nemo cum dolor sit suscipit beatae ab animi aperiam assumenda,
-                enim, quos quia?
+                Warung Ponorogo menyajikan kuliner khas dengan cita rasa
+                autentik, pelayanan cepat, dan harga terjangkau, memberikan
+                pengalaman makan yang memuaskan di setiap pesanan. Nikmati
+                kelezatannya!
               </p>
             </div>
             {/* col-2 */}
