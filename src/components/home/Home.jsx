@@ -393,8 +393,7 @@ const Home = () => {
                   tentang makanan, tetapi juga tentang pengalaman secara
                   keseluruhan. Staf kami, yang dikenal dengan kehangatan dan
                   dedikasinya, berusaha untuk menjadikan setiap kunjungan
-                  sebagai acara yang tak terlupakan."** Semoga terjemahan ini
-                  sesuai dengan yang Anda harapkan!
+                  sebagai acara yang tak terlupakan.
                 </p>
               </div>
             </div>
