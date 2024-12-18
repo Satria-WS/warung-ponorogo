@@ -29,10 +29,10 @@ import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 
 // image event
-import catering from "../../assets/home/event/event-1.png";
+import catering from "../../assets/home/event/cathering.png";
+import event from "../../assets/home/event/event-1.png";
 import birthday from "../../assets/home/event/event-2.png";
-import wedding from "../../assets/home/event/event-3.png";
-import event from "../../assets/home/event/event-4.png";
+// import wedding from "../../assets/home/event/event-3.png";
 
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
@@ -46,6 +46,7 @@ import image_4 from "../../assets/home/image-4.png";
 import image_5 from "../../assets/home/image-5.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Customer from "./Customer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -101,20 +102,20 @@ const Home = () => {
       text: "",
     },
     {
-      imageList: birthday,
-      title: "Birthday",
-      text: "",
-    },
-    {
-      imageList: wedding,
-      title: "Wedding",
-      text: "",
-    },
-    {
       imageList: event,
       title: "Event",
       text: "",
     },
+    {
+      imageList: birthday,
+      title: "Birthday",
+      text: "",
+    },
+    // {
+    //   imageList: wedding,
+    //   title: "Wedding",
+    //   text: "",
+    // },
   ];
 
   return (
@@ -413,6 +414,7 @@ const Home = () => {
             Menawarkan berbagai event yang menarik
           </Typography>
           <Grid2
+            py={"2.5rem"}
             container
             spacing={2} // Adds spacing between grid items
             justifyContent="center" // Centers the items horizontally
@@ -429,13 +431,18 @@ const Home = () => {
                   lg: 2,
                 }}
               >
-                <Card>
+                <Card
+                  sx={{
+                    transition: "transform 300ms ease",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                    },
+                  }}
+                >
                   <CardMedia
                     sx={{
-                      width: "100%",
-                      height: "300px",
                       minHeight: "290px",
-                      objectFit: "contain",
+                      objectFit: "cover",
                       // padding: "1rem",
                     }}
                     component="img"
@@ -454,9 +461,6 @@ const Home = () => {
                     <Typography variant="h5" component="h5">
                       {event.title}
                     </Typography>
-
-                    {/* Description */}
-                    <p></p>
                   </CardContent>
                 </Card>
               </Grid2>
@@ -483,13 +487,13 @@ const Home = () => {
           {/* coulumn-1 */}
           <div className="flex max-lg:flex-col p-4 gap-4">
             {/* coulumn-1.1 */}
-            <div>
-              <img src={image_3} alt="" />
+            <div className="border border-blue-500 rounded-xl">
+              <img className="max-w-[600px] object-cover h-full" src={image_3} alt="" />
             </div>
             {/* coulumn-1.2 */}
             <div className="flex flex-col gap-4 max-sm:max-w-[27rem]">
-              <img src={image_4} alt="" />
-              <img src={image_5} alt="" />
+              <img className="max-w-[290px] object-cover max-lg:max-w-full  rounded-xl   max-h-[333px]" src={image_4} alt="" />
+              <img className="max-w-[290px] object-cover  max-lg:max-w-full  rounded-xl  h-full" src={image_5} alt="" />
             </div>
           </div>
           {/* coulumn-2 */}
@@ -504,20 +508,19 @@ const Home = () => {
                 variant="h3"
                 component="h3"
               >
-                Fastest Food Delivery in City
+                Menyajikan makanan lezat
               </Typography>
 
               <p className="">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab in
-                esse eveniet consectetur quis temporibus dolorum eius iste
-                facere neque?
+                Warung Ponorogo menyajikan makanan lezat dengan layanan
+                pengantaran tercepat di kota, siap memuaskan selera Anda!
               </p>
-              <ul>
+              <ul className="space-y-3 font-semibold">
                 <li>
-                  <DeliveryDiningIcon /> Delivery within 30 minutes
+                  <DeliveryDiningIcon /> Siap antar pesanan
                 </li>
                 <li>
-                  <MonetizationOnIcon /> Best Offer & Prices
+                  <MonetizationOnIcon /> Harga  terjangkau
                 </li>
                 <li>
                   <WhatsAppIcon /> Whatsap Online
@@ -527,66 +530,7 @@ const Home = () => {
           </div>
         </Box>
         {/* our customer */}
-        <Box
-          sx={{
-            padding: "2rem 1rem",
-          }}
-        >
-          <Typography
-            sx={{
-              fontFamily: "Playfair Display",
-              textAlign: "center",
-            }}
-            variant="h3"
-            component="h3"
-          >
-            What Our Customer Say
-          </Typography>
-          <div className="grid grid-cols-3 max-lg:grid-cols-1 place-items-center max-w-[78rem] mx-auto py-10 gap-3">
-            {Array.from(Array(3)).map((_, index) => (
-              <>
-                <Card
-                  sx={{
-                    backgroundColor: "#F9F9F7",
-                    maxWidth: "400px",
-                  }}
-                >
-                  <CardContent
-                    sx={{
-                      padding: "1rem 2rem",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#AD343E",
-                      }}
-                      variant="h4"
-                      component="h4"
-                    >
-                      “The best restaurant”
-                    </Typography>
-                    <p className="py-4">
-                      Last night, we dined at place and were simply blown away.
-                      From the moment we stepped in, we were enveloped in an
-                      inviting atmosphere and greeted with warm smiles.
-                    </p>
-                  </CardContent>
-                  <Divider />
-                  <CardHeader
-                    avatar={
-                      <Avatar
-                        alt="Remy Sharp"
-                        src="https://pasa.org/wp-content/uploads/2021/06/Vervet-Monkey-Foundation-credit-Kyle-.jpg"
-                      />
-                    }
-                    title="Monkey"
-                    subheader="Update place"
-                  />
-                </Card>
-              </>
-            ))}
-          </div>
-        </Box>
+        {/* <Customer /> */}
       </Container>
     </>
   );
