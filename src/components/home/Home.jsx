@@ -14,17 +14,16 @@ import {
   Divider,
   CssBaseline,
 } from "@mui/material";
-import backgroundImage from "../../assets/home/landing.png";
+import backgroundImage from "../../assets/home/image-1.png";
 import CardMenu from "./CardMenu";
 // icon
-import breakfast from "../../assets/home/ourMenu/breakfast.svg";
-import dishes from "../../assets/home/ourMenu/dishes.svg";
-import drink from "../../assets/home/ourMenu/drinks.svg";
-import desserts from "../../assets/home/ourMenu/desserts.svg";
+import breakfast from "../../assets/home/ourMenu/breakfast-1.png";
+import dishes from "../../assets/home/ourMenu/dishes-1.png";
+import drink from "../../assets/home/ourMenu/drink-1.png";
+import desserts from "../../assets/home/ourMenu/dessert-1.png";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 
 // image
-
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
@@ -150,7 +149,9 @@ const Home = () => {
               variant="h2"
               sx={{
                 fontFamily: "Playfair Display",
-                
+                // color: "white",
+                fontWeight: 600,
+                letterSpacing: 5,
               }}
             >
               Cita Rasa Ponorogo Rasakan Sensasinya!
@@ -259,7 +260,7 @@ const Home = () => {
                     maxWidth: 345,
                     margin: " 0 auto",
                     boxShadow: 3,
-                    borderRadius: 2,
+                    borderRadius: 100,
                     padding: "1.5rem",
                     cursor: "pointer",
 
@@ -274,6 +275,7 @@ const Home = () => {
                     sx={{
                       width: "100px",
                       height: "100px",
+                      borderRadius: "80px",
                     }}
                     component="img"
                     image={icon.imageList} // Your image source
@@ -287,19 +289,22 @@ const Home = () => {
                       flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
-                     
                     }}
                   >
                     {/* Title */}
-                    <Typography sx={{
-                       fontWeight:"600"
-                    }} variant="h5" component="div">
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                      }}
+                      variant="h5"
+                      component="div"
+                    >
                       {icon.title}
                     </Typography>
 
                     {/* Description */}
                     <Typography
-                      sx={{ textAlign: "center", }}
+                      sx={{ textAlign: "center" }}
                       variant="body2"
                       color="text.secondary"
                       padding="1rem 0"
@@ -328,70 +333,72 @@ const Home = () => {
           </Grid2>
         </Box>
         {/* visit us */}
-        <Box
-          sx={{
-            height: "600px",
-            padding: "2rem",
-            margin: "5rem 0",
-          }}
-        >
-          <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
-            {/* col-1 */}
-            <div className="relative">
-              <img
-                className=" border border-black object-cover w-full h-[36rem] rounded-lg  "
-                src={image_2}
-                alt="person"
-              />
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              height: "600px",
+              padding: "2rem",
+              margin: "5rem 0",
+            }}
+          >
+            <div className="grid grid-cols-2 max-xl:grid-cols-1 max-xl:overflow-y-auto bg-[#F9F9F7] h-full hover:shadow-xl duration-300 ">
+              {/* col-1 */}
+              <div className="relative">
+                <img
+                  className=" border border-black object-cover w-full h-full rounded-lg  "
+                  src={image_2}
+                  alt="person"
+                />
 
-              <div className=" bg-[#474747] w-[300px] h-auto absolute bottom-0 right-0 text-sm text-white p-5 space-y-3 rounded-lg">
-                <Typography
-                  sx={{
-                    fontWeight: 600,
-                  }}
-                >
-                  Come and visit us
-                </Typography>
-                <div>
-                  <PhoneIcon />: 0813-8797-1837
-                </div>
-                <div>
-                  <EmailIcon />: extencezone02@gmail.com
-                </div>
-                <div className="text-justify">
-                  <PlaceIcon />: Sawangan Permai RT, RT.7RT.1/RW.9, Sawangan
-                  Baru, Kec. Sawangan, Kota Depok, Jawa Barat 16511
+                <div className=" bg-[#474747] w-[300px] h-auto absolute bottom-0 right-0 text-sm text-white p-5 space-y-3 rounded-lg">
+                  <Typography
+                    sx={{
+                      fontWeight: 600,
+                    }}
+                  >
+                    Come and visit us
+                  </Typography>
+                  <div>
+                    <PhoneIcon />: 0813-8797-1837
+                  </div>
+                  <div>
+                    <EmailIcon />: extencezone02@gmail.com
+                  </div>
+                  <div className="text-justify">
+                    <PlaceIcon />: Sawangan Permai RT, RT.7RT.1/RW.9, Sawangan
+                    Baru, Kec. Sawangan, Kota Depok, Jawa Barat 16511
+                  </div>
                 </div>
               </div>
+              {/* col-2 */}
+              <div className="relative space-y-5 p-16">
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontFamily: "Playfair Display",
+                  }}
+                >
+                  Kami menyediakan makanan sehat untuk keluarga Anda
+                </Typography>
+                <p className="text-[#2C2F24] font-semibold">
+                  Cerita kami dimulai dengan visi untuk menciptakan pengalaman
+                  bersantap yang unik yang menggabungkan hidangan berkualitas,
+                  pelayanan luar biasa, dan suasana yang hidup. Berakar pada
+                  budaya kuliner yang kaya di Ponorogo, kami bertujuan untuk
+                  menghormati akar lokal kami sambil memadukan cita rasa global.
+                </p>
+                <p>
+                  Di tempat ini, kami percaya bahwa bersantap bukan hanya
+                  tentang makanan, tetapi juga tentang pengalaman secara
+                  keseluruhan. Staf kami, yang dikenal dengan kehangatan dan
+                  dedikasinya, berusaha untuk menjadikan setiap kunjungan
+                  sebagai acara yang tak terlupakan."** Semoga terjemahan ini
+                  sesuai dengan yang Anda harapkan!
+                </p>
+              </div>
             </div>
-            {/* col-2 */}
-            <div className="relative space-y-5 p-16">
-              <Typography
-                variant="h3"
-                sx={{
-                  fontFamily: "Playfair Display",
-                }}
-              >
-                Kami menyediakan makanan sehat untuk keluarga Anda
-              </Typography>
-              <p className="text-[#2C2F24] font-semibold">
-                Cerita kami dimulai dengan visi untuk menciptakan pengalaman
-                bersantap yang unik yang menggabungkan hidangan berkualitas,
-                pelayanan luar biasa, dan suasana yang hidup. Berakar pada
-                budaya kuliner yang kaya di Ponorogo, kami bertujuan untuk
-                menghormati akar lokal kami sambil memadukan cita rasa global.
-              </p>
-              <p>
-                Di tempat ini, kami percaya bahwa bersantap bukan hanya tentang
-                makanan, tetapi juga tentang pengalaman secara keseluruhan. Staf
-                kami, yang dikenal dengan kehangatan dan dedikasinya, berusaha
-                untuk menjadikan setiap kunjungan sebagai acara yang tak
-                terlupakan."** Semoga terjemahan ini sesuai dengan yang Anda
-                harapkan!
-              </p>
-            </div>
-          </div>
-        </Box>
+          </Box>
+        </Container>
         {/* offer event */}
         <Box>
           {/* Title */}
