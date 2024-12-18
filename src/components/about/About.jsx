@@ -94,7 +94,7 @@ const About = () => {
   return (
     <>
       <CssBaseline />
-      <Container  maxWidth="xl">
+      <Container maxWidth="xl">
         <Box ref={sectionAbout} sx={{ padding: "3rem" }}>
           <Typography
             variant="h2"
@@ -111,7 +111,7 @@ const About = () => {
           </p>
         </Box>
       </Container>
-      <Container maxWidth="xl">
+      <Container  maxWidth="xl">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] py-20 h-full ">
           {/* col-1 */}
           <div className="relative">
@@ -158,13 +158,23 @@ const About = () => {
               our local roots while infusing a global palate.
             </p>
             <p>
-              At place, we believe that dining is not just about food, but also
-              about the overall experience. Our staff, renowned for their warmth
-              and dedication, strives to make every visit an unforgettable
-              event.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              harum ea consequuntur quia voluptas deserunt assumenda cumque,
+              deleniti perferendis? Unde laboriosam magnam minus odio repellat
+              beatae illum totam perferendis, praesentium reprehenderit et iste
+              soluta aliquid nobis neque doloribus at obcaecati voluptas, ipsum
+              earum corporis. Ratione nisi quisquam, rem quos tempore fugiat
+              eveniet nobis exercitationem nam a iure incidunt nostrum vel
+              perferendis? Ducimus pariatur voluptatibus doloribus numquam
+              sapiente eum tempore vero? Obcaecati, esse veniam maxime error
+              inventore molestias accusamus dolorum ut enim unde iure debitis
+              rerum. Quisquam officiis dolore porro in sed? Laborum libero
+              perferendis ipsam error dolor nihil odio et.
             </p>
+           
           </div>
         </div>
+       
       </Container>
       <Container style={{ paddingLeft: 0, paddingRight: 0 }} maxWidth={false}>
         <Box
