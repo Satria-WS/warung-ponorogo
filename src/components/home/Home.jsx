@@ -487,12 +487,24 @@ const Home = () => {
           <div className="flex max-lg:flex-col p-4 gap-4">
             {/* coulumn-1.1 */}
             <div className="border border-blue-500 rounded-xl">
-              <img className="max-w-[600px] object-cover h-full" src={image_3} alt="" />
+              <img
+                className="max-w-[600px] object-cover h-full"
+                src={image_3}
+                alt=""
+              />
             </div>
             {/* coulumn-1.2 */}
             <div className="flex flex-col gap-4 max-sm:max-w-[27rem]">
-              <img className="max-w-[290px] object-cover max-lg:max-w-full  rounded-xl   max-h-[333px]" src={image_4} alt="" />
-              <img className="max-w-[290px] object-cover  max-lg:max-w-full  rounded-xl  h-full" src={image_5} alt="" />
+              <img
+                className="max-w-[290px] object-cover max-lg:max-w-full  rounded-xl   max-h-[333px]"
+                src={image_4}
+                alt=""
+              />
+              <img
+                className="max-w-[290px] object-cover  max-lg:max-w-full  rounded-xl  h-full"
+                src={image_5}
+                alt=""
+              />
             </div>
           </div>
           {/* coulumn-2 */}
@@ -519,7 +531,7 @@ const Home = () => {
                   <DeliveryDiningIcon /> Siap antar pesanan
                 </li>
                 <li>
-                  <MonetizationOnIcon /> Harga  terjangkau
+                  <MonetizationOnIcon /> Harga terjangkau
                 </li>
                 <li>
                   <WhatsAppIcon /> Whatsap Online
