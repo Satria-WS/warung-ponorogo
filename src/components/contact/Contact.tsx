@@ -145,8 +145,8 @@ const Contact: React.FC = () => {
             Contact Us
           </Typography>
           <p className="max-w-[500px] mx-auto text-center py-5">
-            We consider all the drivers of change gives you the components you
-            need to change to create a truly happens.
+            Hubungi kami di Nomor Telepon/WhatsApp +62 812-8080-7385 atau email
+            rms.ponorogo21@gmail.com untuk reservasi dan informasi lebih lanjut.
           </p>
         </Box>
         {/* form */}
