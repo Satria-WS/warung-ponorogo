@@ -23,15 +23,30 @@ import TabPanel from "@mui/lab/TabPanel";
 import { useState } from "react";
 import * as React from "react";
 
+
+
 // import menu list
-import eggs from "../../assets/menu/eggs.png";
-import pizza from "../../assets/menu/pizza.png";
-import cocktail from "../../assets/menu/cocktail.png";
-import cake from "../../assets/menu/cake.png";
-import lemon from "../../assets/menu/lemon.png";
-import icecream from "../../assets/menu/icecream.png";
+//breakfast
+import ayamKatsu from "../../assets/menu/ayamKatsu.png";
 import burger from "../../assets/menu/burger.png";
-import waffle from "../../assets/menu/waffles.png";
+import kentang from "../../assets/menu/kentang.png";
+import sandwich from "../../assets/menu/sandwich.png";
+
+//mainDishes
+import sateAyam from "../../assets/menu/sateAyam.png";
+import ayamBakar from "../../assets/menu/ayamBakar.png";
+import ayamPenyet from "../../assets/menu/ayamPenyet.png";
+import ayamKremes from "../../assets/menu/ayamKremes.png";
+
+// minuman
+import tehPoci from "../../assets/menu/tehPoci.png";
+import esJeruk from "../../assets/menu/esJeruk.png";
+import esJerukBiji from "../../assets/menu/esJerukBiji.png";
+
+
+//dessert
+import cake from "../../assets/menu/cake.png";
+import pudding from "../../assets/menu/pudding.png";
 
 const Menu = () => {
   const [value, setValue] = useState("1");
@@ -47,61 +62,102 @@ const Menu = () => {
   };
 
   const menuList = [
+ //breakfast
     {
-      image: eggs,
-      price: "$5.99",
-      name: "Scrambled Eggs",
-      text: "Fluffy scrambled eggs served with toast.",
+      image: ayamKatsu,
+      price: "25000",
+      name: "Ayam Katsu",
+      text: "Ayam tepung renyah dengan saus khas, pilihan sempurna untuk sarapan yang memuaskan.",
       type: "Breakfast",
-    },
-    {
-      image: pizza,
-      price: "$12.99",
-      name: "Margherita Pizza",
-      text: "Classic pizza with tomato, mozzarella, and basil.",
-      type: "Main Dishes",
-    },
-    {
-      image: cocktail,
-      price: "$7.99",
-      name: "Mango Cocktail",
-      text: "Refreshing tropical mango drink with a splash of rum.",
-      type: "Drinks",
-    },
-    {
-      image: cake,
-      price: "$4.99",
-      name: "Chocolate Cake",
-      text: "Rich and moist chocolate cake with creamy frosting.",
-      type: "Desserts",
-    },
-    {
-      image: lemon,
-      price: "$3.99",
-      name: "Lemonade",
-      text: "Freshly squeezed lemonade, sweet and tart.",
-      type: "Drinks",
-    },
-    {
-      image: icecream,
-      price: "$2.99",
-      name: "Vanilla Ice Cream",
-      text: "Creamy vanilla ice cream with a smooth texture.",
-      type: "Dessert",
     },
     {
       image: burger,
-      price: "$10.99",
-      name: "Cheeseburger",
-      text: "Juicy beef patty with cheese, lettuce, and tomato.",
+      price: "10000",
+      name: "Burger",
+      text: "Burger lezat dengan daging pilihan dan sayuran segar, siap menemani pagi Anda.",
+      type: "Breakfast",
+    },
+    {
+      image: kentang,
+      price: "20000",
+      name: "Kentang",
+      text: "Kentang goreng renyah dengan bumbu spesial, cocok sebagai teman sarapan Anda.",
+      type: "Breakfast",
+    },
+    {
+      image: sandwich,
+      price: "10000",
+      name: "Sandwich",
+      text: "Sandwich dengan isian segar dan gurih, pas untuk sarapan ringan yang penuh energi.",
+      type: "Breakfast",
+    },
+ //mainDishes
+    {
+      image: sateAyam,
+      price: "34000",
+      name: "Sate Ayam",
+      text: "Sate ayam dengan bumbu kacang khas, rasanya gurih dan menggugah selera.",
+      type: "Main Dishes",
+    },
+ 
+    {
+      image: ayamBakar,
+      price: "35000",
+      name: "Ayam Bakar",
+      text: "Ayam bakar dengan bumbu rempah yang kaya rasa, cocok untuk makan siang atau malam.",
       type: "Main Dishes",
     },
     {
-      image: waffle,
-      price: "$6.99",
-      name: "Belgian Waffles",
-      text: "Golden waffles served with syrup and whipped cream.",
-      type: "Breakfast",
+      image: ayamPenyet,
+      price: "25000",
+      name: "Ayam Penyet",
+      text: "Ayam penyet dengan sambal pedas yang menggigit, memberikan rasa yang pedas dan nikmat.",
+      type: "Main Dishes",
+    },
+    {
+      image: ayamKremes,
+      price: "28000",
+      name: "Ayam Kremes",
+      text: "Ayam kremes dengan lapisan renyah yang gurih, berpadu sempurna dengan sambal khas.",
+      type: "Main Dishes",
+    },
+
+   // minuman
+    {
+      image: tehPoci,
+      price: "5000",
+      name: "Teh Poci",
+      text: "Teh poci yang menyegarkan, cocok untuk menemani waktu santai Anda..",
+      type: "Drinks",
+    },
+    {
+      image: esJeruk,
+      price: "7000",
+      name: "Es Jeruk",
+      text: "Es jeruk segar dengan rasa manis alami, sempurna untuk menyegarkan tenggorokan.",
+      type: "Drinks",
+    },
+    {
+      image: esJerukBiji,
+      price: "8000",
+      name: "Es Jeruk Biji Selasih",
+      text: "Es jeruk dengan tambahan biji selasih yang memberikan sensasi unik dan segar.",
+      type: "Drinks",
+    },
+    // dessert
+    {
+      image: cake,
+      price: "5000",
+      name: "Cake",
+      text: "Kue lembut dengan berbagai rasa, sempurna untuk menutup hidangan Anda dengan manis.",
+      type: "Desserts",
+    },
+    {
+      image: pudding,
+      price: "5000",
+      name: "Pudding",
+      text: "Puding manis dan lembut, pilihan tepat untuk makanan penutup yang ringan dan menyegarkan.",
+      type: "Desserts",
     },
   ];
 
@@ -249,8 +305,11 @@ const Menu = () => {
                       }}
                     >
                       <CardMedia
+                        sx={{
+                          width: "100%",
+                          height:"250px"
+                        }}
                         component="img"
-                        height="140"
                         image={item.image}
                         alt={item.name}
                       />
