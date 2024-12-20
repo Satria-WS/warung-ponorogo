@@ -46,7 +46,6 @@ const Menu = () => {
     return menuList.filter((item) => item.type === type); // Filter by type (Breakfast, Main Dishes, Drinks, Desserts)
   };
 
-
   const menuList = [
     {
       image: eggs,
@@ -106,25 +105,25 @@ const Menu = () => {
     },
   ];
 
-    const sectionMenu = React.useRef<HTMLHeadingElement | null>(null);
-  
-    React.useEffect(() => {
-      // When the component mounts, check if the ref is available and scroll to it
-      if (sectionMenu.current) {
-        const offset = 200; // Offset to ensure the section is not at the very top
-        const position = sectionMenu.current.offsetTop - offset;
-  
-        window.scrollTo({
-          top: position,
-          behavior: "smooth", // Smooth scrolling
-        });
-      }
-    }, []);
+  const sectionMenu = React.useRef<HTMLHeadingElement | null>(null);
+
+  React.useEffect(() => {
+    // When the component mounts, check if the ref is available and scroll to it
+    if (sectionMenu.current) {
+      const offset = 200; // Offset to ensure the section is not at the very top
+      const position = sectionMenu.current.offsetTop - offset;
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
   return (
     <>
       <CssBaseline />
       {/* title */}
-      <Container  maxWidth="xl">
+      <Container maxWidth="xl">
         <Box ref={sectionMenu} sx={{ padding: "3rem" }}>
           <Typography
             variant="h2"
@@ -136,8 +135,8 @@ const Menu = () => {
             Our Menu
           </Typography>
           <p className="text-center py-3 max-w-[500px] mx-auto">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
-            dolorem iure numquam similique nisi eius nostrum qui, ex animi?
+            Menu kami menawarkan hidangan lezat, sehat, khas Ponorogo, dan
+            beragam pilihan.
           </p>
         </Box>
       </Container>
@@ -207,7 +206,7 @@ const Menu = () => {
               sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-                placeContent:"center",
+                placeContent: "center",
                 p: 3,
                 "@media(max-width:1280px)": {
                   gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
@@ -233,12 +232,10 @@ const Menu = () => {
               ).map((item, index) => (
                 <>
                   <TabPanel
-                    sx={
-                      {
-                        display: "flex",
-                        justifyContent:"center"
-                      }
-                    }
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
                     key={index}
                     value={value}
                   >
