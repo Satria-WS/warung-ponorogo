@@ -103,12 +103,12 @@ const Home = () => {
     },
     {
       imageList: event,
-      title: "Event",
+      title: "BBQ Night",
       text: "",
     },
     {
       imageList: birthday,
-      title: "Birthday",
+      title: "Celebrations",
       text: "",
     },
     // {
