@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+
 import {
   Box,
   Typography,
@@ -15,7 +16,7 @@ import {
   CssBaseline,
 } from "@mui/material";
 import backgroundImage from "../../assets/home/image-1.png";
-import CardMenu from "./CardMenu";
+import { TypeAnimation } from "react-type-animation";
 // icon
 import breakfast from "../../assets/home/ourMenu/breakfast-1.png";
 import dishes from "../../assets/home/ourMenu/dishes-1.png";
@@ -155,13 +156,34 @@ const Home = () => {
                 letterSpacing: 5,
               }}
             >
-              Cita Rasa Ponorogo Rasakan Sensasinya!
+              <TypeAnimation
+                sequence={[
+                  "Cita Rasa Ponorogo Rasakan Sensasinya!",
+                  2000,
+                  "Selamat datang di Rumah Makan Ponorogo!",
+                  2000,
+                  "Rasakan sensasi kuliner Ponorogo dalam setiap suapan",
+                  3000,
+                ]}
+                wrapper="span"
+                // speed={1}
+                deletionSpeed={50}
+                speed={{ type: "keyStrokeDelayInMs", value: 250 }}
+                style={{ display: "inline-block" }}
+                repeat={Infinity}
+              />
             </Typography>
-            <p className="text-xl text-[#2C2F24] font-semibold py-10">
+            <p
+              data-aos="fade-up"
+              data-aos-delay={200}
+              className="text-xl text-[#2C2F24] font-semibold py-10"
+            >
               Selamat datang di Rumah Makan Ponorogo! dan Rasakan sensasi
               kuliner Ponorogo dalam setiap suapan.
             </p>
             <Box
+              data-aos="fade-up"
+              data-aos-delay={400}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -211,6 +233,8 @@ const Home = () => {
           }}
         >
           <Typography
+            data-aos="fade-up"
+            data-aos-delay={300}
             variant="h2"
             sx={{
               fontFamily: "Playfair Display",
@@ -222,6 +246,8 @@ const Home = () => {
           </Typography>
           {/* Grid*/}
           <Grid2
+            data-aos="zoom-in"
+            data-aos-delay={300}
             container
             spacing={2} // Adds spacing between grid items
             sx={{
@@ -342,7 +368,10 @@ const Home = () => {
               margin: "5rem 0",
             }}
           >
-            <div className="grid grid-cols-2 max-xl:grid-cols-1 max-xl:overflow-y-auto bg-[#F9F9F7] h-full hover:shadow-xl duration-300 ">
+            <div
+              data-aos="fade-left"
+              data-aos-delay={400}
+              className="grid grid-cols-2 max-xl:grid-cols-1 max-xl:overflow-y-auto bg-[#F9F9F7] h-full hover:shadow-xl duration-300 ">
               {/* col-1 */}
               <div className="relative">
                 <img
@@ -403,6 +432,8 @@ const Home = () => {
         <Box>
           {/* Title */}
           <Typography
+            data-aos="fade-up-right"
+            data-aos-delay={400}
             variant="h3"
             sx={{
               fontFamily: "Playfair Display",
@@ -431,6 +462,8 @@ const Home = () => {
                 }}
               >
                 <Card
+                  data-aos="fade-down"
+                  data-aos-delay={`${index+2}00`}
                   sx={{
                     transition: "transform 300ms ease",
                     "&:hover": {
