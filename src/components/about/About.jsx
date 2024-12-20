@@ -42,18 +42,18 @@ const About = () => {
   const iconList = [
     {
       icon: icon_1,
-      title: "Multi Cuisine",
-      text: "",
+      title: "Masakakan Beragam",
+      text: "Kami menawarkan beragam pilihan masakan lezat, dari hidangan tradisional Ponorogo hingga menu modern, memenuhi selera semua pengunjung.",
     },
     {
       icon: icon_2,
-      title: "Easy To Order",
-      text: "",
+      title: "Mudah Order",
+      text: "Pesan makanan kami dengan mudah melalui berbagai platform, baik langsung di tempat atau layanan pesan antar online yang cepat.",
     },
     {
       icon: icon_3,
-      title: "Fast Delivery",
-      text: "",
+      title: "Pengiriman Cepat",
+      text: "Nikmati makanan favorit Anda dengan pengiriman cepat dan aman, memastikan hidangan sampai dalam kondisi segar dan siap dinikmati.",
     },
   ];
 
@@ -106,12 +106,12 @@ const About = () => {
             About Us
           </Typography>
           <p className="text-center py-3 max-w-[500px] mx-auto">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quas
-            dolorem iure numquam similique nisi eius nostrum qui, ex animi?
+            Kami menyajikan hidangan khas Ponorogo dengan layanan terbaik,
+            menggabungkan cita rasa lokal dan atmosfer yang hangat untuk Anda.
           </p>
         </Box>
       </Container>
-      <Container  maxWidth="xl">
+      <Container maxWidth="xl">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] py-20 h-full ">
           {/* col-1 */}
           <div className="relative">
@@ -149,15 +149,18 @@ const About = () => {
                 fontFamily: "Playfair Display",
               }}
             >
-              We provide healthy food for your family
+              Kami menyediakan makanan sehat untuk keluarga
             </Typography>
             <p className="text-[#2C2F24] font-semibold">
-              Our story began with a vision to create a unique dining experience
-              that merges fine dining, exceptional service, and a vibrant
-              ambiance. Rooted in city's rich culinary culture, we aim to honor
-              our local roots while infusing a global palate.
+              Kisah kami dimulai dengan visi untuk menciptakan pengalaman makan
+              yang unik, menggabungkan hidangan khas Ponorogo, layanan istimewa,
+              dan suasana yang nyaman. Berakar pada budaya kuliner Ponorogo yang
+              kaya, kami berkomitmen untuk menghormati warisan lokal sambil
+              menyajikan makanan sehat dan bergizi untuk seluruh keluarga. Kami
+              percaya bahwa makanan yang enak dan sehat bisa dinikmati oleh
+              siapa saja, kapan saja.
             </p>
-            <p>
+            {/* <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
               harum ea consequuntur quia voluptas deserunt assumenda cumque,
               deleniti perferendis? Unde laboriosam magnam minus odio repellat
@@ -170,11 +173,9 @@ const About = () => {
               inventore molestias accusamus dolorum ut enim unde iure debitis
               rerum. Quisquam officiis dolore porro in sed? Laborum libero
               perferendis ipsam error dolor nihil odio et.
-            </p>
-           
+            </p> */}
           </div>
         </div>
-       
       </Container>
       <Container style={{ paddingLeft: 0, paddingRight: 0 }} maxWidth={false}>
         <Box
@@ -185,18 +186,18 @@ const About = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: "100%",
-            height: "auto",
-            objectFit: "cover",
+            width: "100% ",
+            backgroundSize: "cover",
             backgroundImage: `url(${image_2})`,
             fontFamily: "Playfair Display",
             color: "white",
             padding: "18rem 10rem 18rem 10rem",
             textAlign: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           {/* svg play button playlist */}
-          <Button
+          {/* <Button
             sx={{
               cursor: "pointer", // Indicate that it's clickable
               "&:hover": {
@@ -215,7 +216,7 @@ const About = () => {
             }}
           >
             <img className="" src={play} alt="Play Button" />
-          </Button>
+          </Button> */}
           {/* title */}
 
           <Typography
@@ -269,9 +270,7 @@ const About = () => {
                 <div className="space-y-3">
                   <div className="font-semibold">{item.title}</div>
                   <div className="text-darkGray text-justify">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Earum tempore optio dolor praesentium obcaecati sunt
-                    perferendis rem ratione quo obcaecati doloremque!
+                    {item.text}
                   </div>
                 </div>
               </div>
@@ -297,13 +296,14 @@ const About = () => {
                 fontFamily: "Playfair Display",
               }}
             >
-              A little information for our valuable guest
+              Sedikit Informasi untuk Tamu Kami yang Terhormat
             </Typography>
             <p className="text-[#2C2F24] font-semibold">
-              Our story began with a vision to create a unique dining experience
-              that merges fine dining, exceptional service, and a vibrant
-              ambiance. Rooted in city's rich culinary culture, we aim to honor
-              our local roots while infusing a global palate.
+              Kisah kami dimulai dengan visi untuk menciptakan pengalaman makan
+              yang unik, menggabungkan hidangan khas Ponorogo, layanan istimewa,
+              dan suasana yang hangat. Berakar pada budaya kuliner Ponorogo yang
+              kaya, kami berkomitmen untuk menghormati warisan lokal kami sambil
+              menghadirkan cita rasa yang menggugah selera.
             </p>
             <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-3 ">
               {informationList.map((item, index) => (
