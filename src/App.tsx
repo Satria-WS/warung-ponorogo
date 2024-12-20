@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from "react";
+import { TypeAnimation } from 'react-type-animation';
 // import router
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // import icon
@@ -51,7 +52,26 @@ import imageF_2 from "./assets/footer/image-2.png";
 import imageF_3 from "./assets/footer/image-3.png";
 import imageF_4 from "./assets/footer/image-4.png";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
+
 function App() {
+
+  //configuraton aos
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    })
+    AOS.refresh();
+  },[])
+
+
   // State for the menu visibility
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
   // hook navigate to function
