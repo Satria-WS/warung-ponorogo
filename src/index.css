@@ -10,12 +10,18 @@
 
 * {
  box-sizing: border-box;
+
  /* background-color: #fff; */
 
  /* 
  font-family: "Playfair Display", serif;
  font-family: "DM Sans", sans-serif; 
  */
+}
+
+body {
+ padding-right: 0 !important;
+ 
 }
 
 /* In your custom CSS file, such as styles.css */
