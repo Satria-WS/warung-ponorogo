@@ -307,7 +307,7 @@ function App() {
 
                 {/* Pop-up menu (for mobile) */}
                 <Menu1
-                  sx={{}}
+              
                   anchorEl={menuAnchorElx}
                   open={Boolean(menuAnchorElx)}
                   onClose={handleMenuClose} // Close the menu
@@ -322,6 +322,7 @@ function App() {
                 >
                   {menuList.map((item, index) => (
                     <Link
+                   
                       to={`/${item}`}
                       //   sx={{
                       //   transitionDuration:"300ms",
@@ -338,7 +339,7 @@ function App() {
                         handleMenuClose(); // Close the menu after selecting
                       }}
                     >
-                      <MenuItem className="hover:font-semibold duration-300">
+                      <MenuItem  className="hover:font-semibold duration-300">
                         {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
                           1
                         )}`}
