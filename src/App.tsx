@@ -374,7 +374,7 @@ function App() {
       <Box
         onClick={() =>
           window.open(
-            "https://api.whatsapp.com/send/?phone=%2B6281280807385&text&type=phone_number&app_absent=0"
+            "https://gofood.co.id/jakarta/restaurant/warung-ponorogo-5912a9a5-d9bd-482b-86de-b42291b22576"
           )
         }
         sx={{
