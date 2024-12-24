@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 import {
   Box,
   Typography,
@@ -95,7 +96,12 @@ const About = () => {
     <>
       <CssBaseline />
       <Container maxWidth="xl">
-        <Box ref={sectionAbout} sx={{ padding: "3rem" }}>
+        <Box
+          data-aos="fade"
+          data-aos-delay="200"
+          ref={sectionAbout}
+          sx={{ padding: "3rem" }}
+        >
           <Typography
             variant="h2"
             sx={{
@@ -142,7 +148,11 @@ const About = () => {
             </div>
           </div>
           {/* col-2 */}
-          <div className="relative space-y-5 p-16">
+          <div
+            data-aos="fade"
+            data-aos-delay="400"
+            className="relative space-y-5 p-16"
+          >
             <Typography
               variant="h3"
               sx={{
@@ -179,6 +189,8 @@ const About = () => {
       </Container>
       <Container style={{ paddingLeft: 0, paddingRight: 0 }} maxWidth={false}>
         <Box
+          data-aos="fade"
+          data-aos-delay="600"
           component="div"
           alt="picture"
           sx={{
@@ -224,9 +236,10 @@ const About = () => {
             sx={{
               fontFamily: "Playfair Display",
               paddingTop: "2rem",
+              letterSpacing: "10px",
             }}
           >
-            Feel the authentic & original taste from us
+            Rasakan cita rasa original dari kami
           </Typography>
           {/* YouTube Video */}
           {/* {true && (
@@ -269,9 +282,7 @@ const About = () => {
                 {/* col-1.2 */}
                 <div className="space-y-3">
                   <div className="font-semibold">{item.title}</div>
-                  <div className="text-darkGray text-justify">
-                    {item.text}
-                  </div>
+                  <div className="text-darkGray text-justify">{item.text}</div>
                 </div>
               </div>
             </>
