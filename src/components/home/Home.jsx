@@ -517,7 +517,10 @@ const Home = () => {
           }}
         >
           {/* coulumn-1 */}
-          <div className="flex max-lg:flex-col p-4 gap-4">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            className="flex max-lg:flex-col p-4 gap-4">
             {/* coulumn-1.1 */}
             <div className="border border-blue-500 rounded-xl">
               <img
@@ -541,7 +544,10 @@ const Home = () => {
             </div>
           </div>
           {/* coulumn-2 */}
-          <div className="border border-purple-500 flex items-center">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-delay="300"
+            className="border border-purple-500 flex items-center">
             {/* text content */}
             <div className="max-w-[29rem] p-4 space-y-5">
               {/* title */}
