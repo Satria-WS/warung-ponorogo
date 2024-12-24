@@ -379,21 +379,29 @@ function App() {
           bottom: "4rem",
           right: "5rem",
           zIndex: 1000,
+          "@media(max-width:600px)": {
+           right:'1rem'
+          },
         }}
       >
         <Fab
           color="primary"
           aria-label="whatsapp"
           sx={{
-            backgroundColor: "#25D366", // WhatsApp's signature green color
+            backgroundColor: "#25D366", 
             "&:hover": {
-              backgroundColor: "#128C7E", // Darker shade on hover
+              backgroundColor: "#128C7E", 
             },
-            width: { xs: 56, sm: 64, md: 80 }, // Responsive size for different screen sizes
-            height: { xs: 56, sm: 64, md: 80 }, // Adjust width and height together
+            width: { xs: 60, sm: 70, md: 80 }, 
+            height: { xs: 60, sm: 70, md: 80 }, 
           }}
         >
-          <WhatsAppIcon sx={{ fontSize: "3rem" }} />
+          <WhatsAppIcon sx={{
+            fontSize: "3rem",
+            width: { xs: 45, sm: 50, md: 60 }, 
+            height: { xs: 45, sm: 50, md: 60 }, 
+
+           }} />
         </Fab>
       </Box>
       {/* Footer */}
