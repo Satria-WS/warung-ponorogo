@@ -122,7 +122,9 @@ const Home = () => {
   return (
     <>
       <CssBaseline />
-      <Container disableGutters maxWidth={false}>
+      <Container sx={{
+       overflowX:"hidden"
+      }} disableGutters maxWidth={false}>
         {/* Hero */}
         <Box
           // ref={sectionHome}
