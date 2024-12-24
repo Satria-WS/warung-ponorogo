@@ -398,8 +398,8 @@ function App() {
         >
           <WhatsAppIcon sx={{
             fontSize: "3rem",
-            width: { xs: 45, sm: 50, md: 60 }, 
-            height: { xs: 45, sm: 50, md: 60 }, 
+            width: { xs: 40, sm: 50, md: 60 }, 
+            height: { xs: 40, sm: 50, md: 60 }, 
 
            }} />
         </Fab>
