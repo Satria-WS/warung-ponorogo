@@ -292,7 +292,10 @@ const About = () => {
       <Container maxWidth="lg">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 max-lg:overflow-y-auto bg-[#F9F9F7] h-full ">
           {/* col-1 */}
-          <div className="relative flex flex-col items-center justify-center order-2 max-lg:pb-5">
+          <div
+            data-aos="zoom-out"
+            data-aos-delay="300"
+            className="relative flex flex-col items-center justify-center order-2 max-lg:pb-5">
             <img
               className=" border border-black object-cover w-full h-[36rem] rounded-lg "
               src={image_3}
@@ -300,7 +303,10 @@ const About = () => {
             />
           </div>
           {/* col-2 */}
-          <div className="relative space-y-5 p-16  order-1">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            className="relative space-y-5 p-16  order-1">
             <Typography
               variant="h3"
               sx={{
