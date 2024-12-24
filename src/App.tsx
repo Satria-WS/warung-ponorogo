@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect } from "react";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 // import router
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 
 // icon
 import fb from "./assets/icon/fb.svg";
@@ -56,10 +57,7 @@ import imageF_4 from "./assets/footer/image-4.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
-
 function App() {
-
   //configuraton aos
   useEffect(() => {
     AOS.init({
@@ -67,10 +65,9 @@ function App() {
       duration: 800,
       easing: "ease-in-sine",
       delay: 100,
-    })
+    });
     AOS.refresh();
-  },[])
-
+  }, []);
 
   // State for the menu visibility
   const [menuAnchorElx, setMenuAnchorElx] = useState(null);
@@ -373,35 +370,79 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {/*floating button  */}
+      {/* gofood */}
       <Box
+        onClick={() =>
+          window.open(
+            "https://api.whatsapp.com/send/?phone=%2B6281280807385&text&type=phone_number&app_absent=0"
+          )
+        }
         sx={{
           position: "fixed",
           bottom: "4rem",
           right: "5rem",
           zIndex: 1000,
-          "@media(max-width:600px)": {
-           right:'1rem'
+          "@media(max-width:640px)": {
+            right: "1rem",
           },
         }}
       >
         <Fab
           color="primary"
-          aria-label="whatsapp"
+          aria-label="goFood"
           sx={{
-            backgroundColor: "#25D366", 
-            "&:hover": {
-              backgroundColor: "#128C7E", 
-            },
-            width: { xs: 60, sm: 70, md: 80 }, 
-            height: { xs: 60, sm: 70, md: 80 }, 
+            backgroundColor: "none",
+            width: { xs: 60, sm: 70, md: 80 },
+            height: { xs: 60, sm: 70, md: 80 },
+          
           }}
         >
-          <WhatsAppIcon sx={{
-            fontSize: "3rem",
-            width: { xs: 40, sm: 50, md: 60 }, 
-            height: { xs: 40, sm: 50, md: 60 }, 
-
-           }} />
+          {/* <WhatsAppIcon
+            sx={{
+              fontSize: "3rem",
+              width: { xs: 40, sm: 50, md: 60 },
+              height: { xs: 40, sm: 50, md: 60 },
+            }}
+          /> */}
+           <img   className=" w-[100px] hover:opacity-95 hover:shadow-xl bg-white rounded-full" src={goFood} alt="goFood" />
+        </Fab>
+      </Box>
+      {/* whatsap*/}
+      <Box
+        onClick={() =>
+          window.open(
+            "https://api.whatsapp.com/send/?phone=%2B6281280807385&text&type=phone_number&app_absent=0"
+          )
+        }
+        sx={{
+          position: "fixed",
+          bottom: "10rem",
+          right: "5rem",
+          zIndex: 1000,
+          "@media(max-width:640px)": {
+            right: "1rem",
+          },
+        }}
+      >
+        <Fab
+          color="primary"
+          aria-label="whatsap"
+          sx={{
+            backgroundColor: "#25D366",
+            "&:hover": {
+              backgroundColor: "#128C7E",
+            },
+            width: { xs: 60, sm: 70, md: 80 },
+            height: { xs: 60, sm: 70, md: 80 },
+          }}
+        >
+          <WhatsAppIcon
+            sx={{
+              fontSize: "3rem",
+              width: { xs: 40, sm: 50, md: 60 },
+              height: { xs: 40, sm: 50, md: 60 },
+            }}
+          />
         </Fab>
       </Box>
       {/* Footer */}
