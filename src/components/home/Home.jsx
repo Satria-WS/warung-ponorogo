@@ -137,12 +137,12 @@ const Home = () => {
             minHeight: "750px",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            border: "1px solid red",
+         
           }}
         >
           <Box
             sx={{
-              border: "1px solid red",
+             
               maxWidth: "660px",
               textAlign: "center",
             }}
@@ -513,7 +513,7 @@ const Home = () => {
             margin: "3rem 0",
 
             justifyContent: "center",
-            border: "1px solid red ",
+        
           }}
         >
           {/* coulumn-1 */}
@@ -522,7 +522,7 @@ const Home = () => {
             data-aos-delay="200"
             className="flex max-lg:flex-col p-4 gap-4">
             {/* coulumn-1.1 */}
-            <div className="border border-blue-500 rounded-xl">
+            <div className="rounded-xl">
               <img
                 className="max-w-[600px] object-cover h-full"
                 src={image_3}
@@ -547,7 +547,7 @@ const Home = () => {
           <div
             data-aos="zoom-in-up"
             data-aos-delay="300"
-            className="border border-purple-500 flex items-center">
+            className="flex items-center">
             {/* text content */}
             <div className="max-w-[29rem] p-4 space-y-5">
               {/* title */}
