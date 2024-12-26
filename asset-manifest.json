@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6c2e8596.css",
+    "main.js": "/static/js/main.a067b81c.js",
+    "static/media/image-1.png": "/static/media/image-1.76426f4fdb4c8a453a63.png",
+    "static/media/image-2.png": "/static/media/image-2.a48d14a04f0c6ceee8e9.png",
+    "static/media/event-2.png": "/static/media/event-2.2e54a49e7d5e2f9093e0.png",
+    "static/media/event-1.png": "/static/media/event-1.d04588a8ac9418748e56.png",
+    "static/media/image-4.png": "/static/media/image-4.b193be0c4d2b4570d1c6.png",
+    "static/media/dishes-1.png": "/static/media/dishes-1.2e7ed021d35b082b879d.png",
+    "static/media/ayamKatsu.png": "/static/media/ayamKatsu.300b3f5d6aa2be958eb2.png",
+    "static/media/image-3.png": "/static/media/image-3.b8b62bc0650519a88b9f.png",
+    "static/media/breakfast-1.png": "/static/media/breakfast-1.29fd4c23d3fb2355ff7c.png",
+    "static/media/burger.png": "/static/media/burger.29fd4c23d3fb2355ff7c.png",
+    "static/media/kentang.png": "/static/media/kentang.d5634c9e1208754f8a66.png",
+    "static/media/sandwich.png": "/static/media/sandwich.2334cc304cdd51f15601.png",
+    "static/media/rms.png": "/static/media/rms.b36affd2b44b2ae14e8c.png",
+    "static/media/dessert-1.png": "/static/media/dessert-1.352328dd556346860494.png",
+    "static/media/cathering.png": "/static/media/cathering.a9c0e90d7e6053931f72.png",
+    "static/media/ayamKremes.png": "/static/media/ayamKremes.a48d14a04f0c6ceee8e9.png",
+    "static/media/drink-1.png": "/static/media/drink-1.0e71eac8becbcb7c35bb.png",
+    "static/media/pudding.png": "/static/media/pudding.6a66187831b4852c0225.png",
+    "static/media/sateAyam.png": "/static/media/sateAyam.b8b62bc0650519a88b9f.png",
+    "static/media/image-5.png": "/static/media/image-5.94b8a32b2d6a9063fc5f.png",
+    "static/media/ayamPenyet.png": "/static/media/ayamPenyet.e4823fa5c73c0559b312.png",
+    "static/media/tehPoci.png": "/static/media/tehPoci.d697ed4ac1869e371f61.png",
+    "static/media/ayamBakar.png": "/static/media/ayamBakar.76426f4fdb4c8a453a63.png",
+    "static/media/logo-footer.svg": "/static/media/logo-footer.e3c522bbd505cc8ea8a755a12b011ce3.svg",
+    "static/media/icon-3.svg": "/static/media/icon-3.99275055ecae630c24cb8183b5c3c514.svg",
+    "static/media/logo-goFood.svg": "/static/media/logo-goFood.2762a25afad7406aa0aa90dfa23a34de.svg",
+    "static/media/logo-whatsap.svg": "/static/media/logo-whatsap.02299c26d689eca1d145a88580ba6bd8.svg",
+    "static/media/icon-2.svg": "/static/media/icon-2.46bae71ecb2e9ebb6c8a1539d0244a62.svg",
+    "static/media/icon-1.svg": "/static/media/icon-1.69267d83701938c019f134fac41f4868.svg",
+    "index.html": "/index.html",
+    "static/media/play.svg": "/static/media/play.964f189cc9dcb27f9f284d9d193db70f.svg",
+    "main.6c2e8596.css.map": "/static/css/main.6c2e8596.css.map",
+    "main.a067b81c.js.map": "/static/js/main.a067b81c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c2e8596.css",
+    "static/js/main.a067b81c.js"
+  ]
+}
