@@ -1,12 +1,17 @@
 import React, { Fragment, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 // import router
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 // import icon
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailIcon from "@mui/icons-material/Mail";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
 
 // icon
 import fb from "./assets/icon/fb.svg";
@@ -307,7 +312,6 @@ function App() {
 
                 {/* Pop-up menu (for mobile) */}
                 <Menu1
-              
                   anchorEl={menuAnchorElx}
                   open={Boolean(menuAnchorElx)}
                   onClose={handleMenuClose} // Close the menu
@@ -322,7 +326,6 @@ function App() {
                 >
                   {menuList.map((item, index) => (
                     <Link
-                   
                       to={`/${item}`}
                       //   sx={{
                       //   transitionDuration:"300ms",
@@ -339,7 +342,7 @@ function App() {
                         handleMenuClose(); // Close the menu after selecting
                       }}
                     >
-                      <MenuItem  className="hover:font-semibold duration-300">
+                      <MenuItem className="hover:font-semibold duration-300">
                         {`${item.charAt(0).toLocaleUpperCase()}${item.substring(
                           1
                         )}`}
@@ -364,11 +367,12 @@ function App() {
 
       {/* Router */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
       {/*floating button  */}
       {/* gofood */}
@@ -395,7 +399,6 @@ function App() {
             backgroundColor: "none",
             width: { xs: 60, sm: 70, md: 80 },
             height: { xs: 60, sm: 70, md: 80 },
-          
           }}
         >
           {/* <WhatsAppIcon
@@ -405,7 +408,11 @@ function App() {
               height: { xs: 40, sm: 50, md: 60 },
             }}
           /> */}
-           <img   className=" w-[100px] hover:opacity-95 hover:shadow-xl bg-white rounded-full" src={goFood} alt="goFood" />
+          <img
+            className=" w-[100px] hover:opacity-95 hover:shadow-xl bg-white rounded-full"
+            src={goFood}
+            alt="goFood"
+          />
         </Fab>
       </Box>
       {/* whatsap*/}
