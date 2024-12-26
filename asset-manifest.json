@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/warung-ponorogo/static/css/main.6c2e8596.css",
-    "main.js": "/warung-ponorogo/static/js/main.37e2414f.js",
+    "main.js": "/warung-ponorogo/static/js/main.8fd28569.js",
     "static/media/image-1.png": "/warung-ponorogo/static/media/image-1.76426f4fdb4c8a453a63.png",
     "static/media/image-2.png": "/warung-ponorogo/static/media/image-2.a48d14a04f0c6ceee8e9.png",
     "static/media/event-2.png": "/warung-ponorogo/static/media/event-2.2e54a49e7d5e2f9093e0.png",
@@ -34,10 +34,10 @@
     "index.html": "/warung-ponorogo/index.html",
     "static/media/play.svg": "/warung-ponorogo/static/media/play.964f189cc9dcb27f9f284d9d193db70f.svg",
     "main.6c2e8596.css.map": "/warung-ponorogo/static/css/main.6c2e8596.css.map",
-    "main.37e2414f.js.map": "/warung-ponorogo/static/js/main.37e2414f.js.map"
+    "main.8fd28569.js.map": "/warung-ponorogo/static/js/main.8fd28569.js.map"
   },
   "entrypoints": [
     "static/css/main.6c2e8596.css",
-    "static/js/main.37e2414f.js"
+    "static/js/main.8fd28569.js"
   ]
 }
