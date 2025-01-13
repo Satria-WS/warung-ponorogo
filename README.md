@@ -7,4 +7,4 @@
 
 Tech: React , Tailwind , Material - UI
 
-Demo:  https://satria-ws.github.io/warung-ponorogo/home
+Demo:  https://satria-ws.github.io/warung-ponorogo/
